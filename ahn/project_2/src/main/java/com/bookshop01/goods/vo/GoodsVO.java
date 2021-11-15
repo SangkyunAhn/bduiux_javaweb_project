@@ -14,6 +14,9 @@ public class GoodsVO {
 	private int goods_point;
 	private String goods_delivery_price;
 	private Date goods_delivery_date;
+	private String goods_status;
+	private String goods_manufacturer_intro;
+	private Date goods_manufactured_date;
 	private String goods_fileName;
 	private Date goods_credate;
 
@@ -90,6 +93,30 @@ public class GoodsVO {
 
 	public void setGoods_delivery_date(Date goods_delivery_date) {
 		this.goods_delivery_date = goods_delivery_date;
+	}
+
+	public String getGoods_status() {
+		return goods_status;
+	}
+
+	public void setGoods_status(String goods_status) {
+		this.goods_status = goods_status;
+	}
+
+	public String getGoods_manufacturer_intro() {
+		return goods_manufacturer_intro;
+	}
+
+	public void setGoods_manufacturer_intro(String goods_manufacturer_intro) {
+		this.goods_manufacturer_intro = goods_manufacturer_intro;
+	}
+
+	public Date getGoods_manufactured_date() {
+		return goods_manufactured_date;
+	}
+
+	public void setGoods_manufactured_date(Date goods_manufactured_date) {
+		this.goods_manufactured_date = goods_manufactured_date;
 	}
 
 	public String getGoods_fileName() {

@@ -31,28 +31,28 @@ public class MyPageControllerImpl extends BaseController  implements MyPageContr
 	MyPageService myPageService;
 	@Autowired
 	MemberVO memberVO;
-	
+
 	@Override
 	@RequestMapping(value="/myPageMain.do" ,method = RequestMethod.GET)
 	public ModelAndView myPageMain(@RequestParam(required = false,value="message")  String message,
-			   HttpServletRequest request, HttpServletResponse response)  throws Exception {
+								   HttpServletRequest request, HttpServletResponse response)  throws Exception {
 		HttpSession session=request.getSession();
 		session=request.getSession();
-		session.setAttribute("side_menu", "my_page"); //¸¶ÀÌÆäÀÌÁö »çÀÌµå ¸Ş´º·Î ¼³Á¤ÇÑ´Ù.
-		
+		session.setAttribute("side_menu", "my_page"); //ë§ˆì´í˜ì´ì§€ ì‚¬ì´ë“œ ë©”ë‰´ë¡œ ì„¤ì •í•œë‹¤.
+
 		String viewName=(String)request.getAttribute("viewName");
 		ModelAndView mav = new ModelAndView(viewName);
 		memberVO=(MemberVO)session.getAttribute("memberInfo");
 		String member_id=memberVO.getMember_id();
-		
+
 		List<OrderVO> myOrderList=myPageService.listMyOrderGoods(member_id);
-		
+
 		mav.addObject("message", message);
 		mav.addObject("myOrderList", myOrderList);
 
 		return mav;
 	}
-	
+
 	@Override
 	@RequestMapping(value="/myOrderDetail.do" ,method = RequestMethod.GET)
 	public ModelAndView myOrderDetail(@RequestParam("order_id")  String order_id,HttpServletRequest request, HttpServletResponse response)  throws Exception {
@@ -60,26 +60,26 @@ public class MyPageControllerImpl extends BaseController  implements MyPageContr
 		ModelAndView mav = new ModelAndView(viewName);
 		HttpSession session=request.getSession();
 		MemberVO orderer=(MemberVO)session.getAttribute("memberInfo");
-		
+
 		List<OrderVO> myOrderList=myPageService.findMyOrderInfo(order_id);
 		mav.addObject("orderer", orderer);
 		mav.addObject("myOrderList",myOrderList);
 		return mav;
 	}
-	
+
 	@Override
 	@RequestMapping(value="/listMyOrderHistory.do" ,method = RequestMethod.GET)
 	public ModelAndView listMyOrderHistory(@RequestParam Map<String, String> dateMap,
-			                               HttpServletRequest request, HttpServletResponse response)  throws Exception {
+										   HttpServletRequest request, HttpServletResponse response)  throws Exception {
 		String viewName=(String)request.getAttribute("viewName");
 		ModelAndView mav = new ModelAndView(viewName);
 		HttpSession session=request.getSession();
 		memberVO=(MemberVO)session.getAttribute("memberInfo");
 		String  member_id=memberVO.getMember_id();
-		
+
 		String fixedSearchPeriod = dateMap.get("fixedSearchPeriod");
 		String beginDate=null,endDate=null;
-		
+
 		String [] tempDate=calcSearchPeriod(fixedSearchPeriod).split(",");
 		beginDate=tempDate[0];
 		endDate=tempDate[1];
@@ -87,8 +87,8 @@ public class MyPageControllerImpl extends BaseController  implements MyPageContr
 		dateMap.put("endDate", endDate);
 		dateMap.put("member_id", member_id);
 		List<OrderVO> myOrderHistList=myPageService.listMyOrderHistory(dateMap);
-		
-		String beginDate1[]=beginDate.split("-"); //°Ë»öÀÏÀÚ¸¦ ³â,¿ù,ÀÏ·Î ºĞ¸®ÇØ¼­ È­¸é¿¡ Àü´ŞÇÕ´Ï´Ù.
+
+		String beginDate1[]=beginDate.split("-"); //ê²€ìƒ‰ì¼ìë¥¼ ë…„,ì›”,ì¼ë¡œ ë¶„ë¦¬í•´ì„œ í™”ë©´ì— ì „ë‹¬í•©ë‹ˆë‹¤.
 		String endDate1[]=endDate.split("-");
 		mav.addObject("beginYear",beginDate1[0]);
 		mav.addObject("beginMonth",beginDate1[1]);
@@ -98,32 +98,32 @@ public class MyPageControllerImpl extends BaseController  implements MyPageContr
 		mav.addObject("endDay",endDate1[2]);
 		mav.addObject("myOrderHistList", myOrderHistList);
 		return mav;
-	}	
-	
+	}
+
 	@Override
 	@RequestMapping(value="/cancelMyOrder.do" ,method = RequestMethod.POST)
 	public ModelAndView cancelMyOrder(@RequestParam("order_id")  String order_id,
-			                         HttpServletRequest request, HttpServletResponse response)  throws Exception {
+									  HttpServletRequest request, HttpServletResponse response)  throws Exception {
 		ModelAndView mav = new ModelAndView();
 		myPageService.cancelOrder(order_id);
 		mav.addObject("message", "cancel_order");
 		mav.setViewName("redirect:/mypage/myPageMain.do");
 		return mav;
 	}
-	
+
 	@Override
 	@RequestMapping(value="/myDetailInfo.do" ,method = RequestMethod.GET)
 	public ModelAndView myDetailInfo(HttpServletRequest request, HttpServletResponse response)  throws Exception {
 		String viewName=(String)request.getAttribute("viewName");
 		ModelAndView mav = new ModelAndView(viewName);
 		return mav;
-	}	
-	
+	}
+
 	@Override
 	@RequestMapping(value="/modifyMyInfo.do" ,method = RequestMethod.POST)
 	public ResponseEntity modifyMyInfo(@RequestParam("attribute")  String attribute,
-			                 @RequestParam("value")  String value,
-			               HttpServletRequest request, HttpServletResponse response)  throws Exception {
+									   @RequestParam("value")  String value,
+									   HttpServletRequest request, HttpServletResponse response)  throws Exception {
 		Map<String,String> memberMap=new HashMap<String,String>();
 		String val[]=null;
 		HttpSession session=request.getSession();
@@ -158,22 +158,22 @@ public class MyPageControllerImpl extends BaseController  implements MyPageContr
 			memberMap.put("jibunAddress", val[2]);
 			memberMap.put("namujiAddress", val[3]);
 		}else {
-			memberMap.put(attribute,value);	
+			memberMap.put(attribute,value);
 		}
-		
+
 		memberMap.put("member_id", member_id);
-		
-		//¼öÁ¤µÈ È¸¿ø Á¤º¸¸¦ ´Ù½Ã ¼¼¼Ç¿¡ ÀúÀåÇÑ´Ù.
+
+		//ìˆ˜ì •ëœ íšŒì› ì •ë³´ë¥¼ ë‹¤ì‹œ ì„¸ì…˜ì— ì €ì¥í•œë‹¤.
 		memberVO=(MemberVO)myPageService.modifyMyInfo(memberMap);
 		session.removeAttribute("memberInfo");
 		session.setAttribute("memberInfo", memberVO);
-		
+
 		String message = null;
 		ResponseEntity resEntity = null;
 		HttpHeaders responseHeaders = new HttpHeaders();
 		message  = "mod_success";
 		resEntity =new ResponseEntity(message, responseHeaders, HttpStatus.OK);
 		return resEntity;
-	}	
-	
+	}
+
 }

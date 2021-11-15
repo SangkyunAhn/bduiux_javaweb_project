@@ -13,15 +13,15 @@
       pageContext.setAttribute("br", "<br/>"); //br 태그
 %> 
 <head>
- <title>검색 도서 목록 페이지</title>
+ <title>검색 상품 목록 페이지</title>
 </head>
 <body>
 	<hgroup>
-		<h1>컴퓨터와 인터넷</h1>
-		<h2>오늘의 책</h2>
+		<h1>볼링공/소프트볼</h1>
+		<h2>오늘의 상품</h2>
 	</hgroup>
 	<section id="new_book">
-		<h3>새로나온 책</h3>
+		<h3>새로나온 상품</h3>
 		<div id="left_scroll">
 			<a href='javascript:slide("left");'><img src="${contextPath}/resources/image/left.gif"></a>
 		</div>
@@ -42,7 +42,7 @@
 						<a href="${contextPath}/goods/goodsDetail.do?goods_id=${item.goods_id}">
 						<img width="75" alt="" src="${contextPath}/thumbnails.do?goods_id=${item.goods_id}&fileName=${item.goods_fileName}">
 						</a>
-						<div class="sort">[컴퓨터 인터넷]</div>
+						<div class="sort">[볼링공/소프트볼]</div>
 						<div class="title">
 							<a href="${contextPath}/goods/goodsDetail.do?goods_id=${item.goods_id }">
 							  ${item.goods_title}
@@ -77,8 +77,8 @@
 	<div class="clear"></div>
 	<div id="sorting">
 		<ul>
-			<li><a class="active" href="#">베스트 셀러</a></li>
-			<li><a href="#">최신 출간</a></li>
+			<li><a class="active" href="#">Best상품</a></li>
+			<li><a href="#">New상품</a></li>
 			<li><a style="border: currentColor; border-image: none;" href="#">최근 등록</a></li>
 		</ul>
 	</div>
@@ -95,10 +95,9 @@
 						<h2>
 							<a href="${contextPath}/goods/goodsDetail.do?goods_id=${item.goods_id }">${item.goods_title }</a>
 						</h2>
-						<c:set var="goods_pub_date" value="${item.goods_published_date }" />
-					   <c:set var="arr" value="${fn:split(goods_pub_date,' ')}" />
-						<div class="writer_press"  >${item.goods_writer }저
-							|${item.goods_publisher }|<c:out value="${arr[0]}" />
+						<c:set var="goods_man_date" value="${item.goods_manufactured_date }" />
+					   <c:set var="arr" value="${fn:split(goods_man_date,' ')}" />
+						<div class="data_manufacturer"  >${item.goods_manufacturer }|<c:out value="${arr[0]}" />
 						</div>
 					</td>
 					<td class="price"><span>${item.goods_price }원</span><br>

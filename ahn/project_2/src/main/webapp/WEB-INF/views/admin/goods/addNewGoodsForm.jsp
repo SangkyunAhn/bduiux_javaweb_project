@@ -29,67 +29,71 @@
 	<div class="tab_container" id="container">
 		<ul class="tabs">
 			<li><a href="#tab1">상품정보</a></li>
-			<li><a href="#tab2">상품목차</a></li>
-			<li><a href="#tab3">상품저자소개</a></li>
-			<li><a href="#tab4">상품소개</a></li>
-			<li><a href="#tab5">출판사 상품 평가</a></li>
-			<li><a href="#tab6">추천사</a></li>
-			<li><a href="#tab7">상품이미지</a></li>
+			<li><a href="#tab3">상품이미지</a></li>
 		</ul>
 		<div class="tab_container">
 			<div class="tab_content" id="tab1">
 				<table >
 			<tr >
-				<td width=200 >제품분류</td>
+				<td width=200 >상품분류</td>
 				<td width=500><select name="goods_sort">
-						<option value="컴퓨터와 인터넷" selected>컴퓨터와 인터넷
-						<option value="디지털 기기">디지털 기기
+						<option value="볼링공/소프트볼" selected>볼링공/소프트볼
+						<option value="볼링공/하드볼">볼링공/하드볼
 					</select>
 				</td>
 			</tr>
 			<tr >
-				<td >제품이름</td>
+				<td >상품이름</td>
 				<td><input name="goods_title" type="text" size="40" /></td>
 			</tr>
+			
+		
 			<tr>
-				<td >제조사</td>
+				<td >상품회사</td>
 				<td><input name="goods_manufacturer" type="text" size="40" /></td>
 			</tr>
 			<tr>
-				<td >제품정가</td>
+				<td >상품정가</td>
 				<td><input name="goods_price" type="text" size="40" /></td>
 			</tr>
 			
 			<tr>
-				<td >제품판매가격</td>
+				<td >상품판매가격</td>
 				<td><input name="goods_sales_price" type="text" size="40" /></td>
 			</tr>
 			
 			
 			<tr>
-				<td >제품 구매 포인트</td>
+				<td >상품 구매 포인트</td>
 				<td><input name="goods_point" type="text" size="40" /></td>
 			</tr>
-
+			
 			<tr>
-				<td >제품 배송비</td>
+				<td >상품제작일</td>
+				<td><input  name="goods_manufactured_date"  type="date" size="40" /></td>
+			</tr>
+			
+			
+			
+		
+			<tr>
+				<td >상품 배송비</td>
 				<td><input name="goods_delivery_price" type="text" size="40" /></td>
 			</tr>
 			<tr>
-				<td >제품 도착 예정일</td>
+				<td >상품 도착 예정일</td>
 				<td><input name="goods_delivery_date"  type="date" size="40" /></td>
 			</tr>
 			
 			<tr>
-				<td >제품종류</td>
+				<td >상품분류</td>
 				<td>
 				<select name="goods_status">
-				  <option value="bestseller"  >베스트셀러</option>
-				  <option value="steadyseller" >스테디셀러</option>
-				  <option value="newbook" selected >신간</option>
+				  <option value="bestseller"  >베스트상품</option>
+				  <option value="steadyseller" >인기상품</option>
+				  <option value="newgoods" selected >신상품</option>
 				  <option value="on_sale" >판매중</option>
 				  <option value="buy_out" >품절</option>
-				  <option value="out_of_print" >절판</option>
 				</select>
 				</td>
 			</tr>
@@ -100,16 +104,11 @@
 			</tr>
 				</table>	
 			</div>
-			<div class="tab_content" id="tab2">
-				<H4>책목차</H4>
-				<table>	
-				 <tr>
-					<td >책목차</td>
-					<td><textarea  rows="100" cols="80" name="goods_contents_order"></textarea></td>
-				</tr>
-				</table>	
-			</div>
-			<div class="tab_content" id="tab7">
+			
+			
+		
+			
+			<div class="tab_content" id="tab3">
 				<h4>상품이미지</h4>
 				<table >
 					<tr>

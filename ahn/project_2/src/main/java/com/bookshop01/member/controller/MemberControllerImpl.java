@@ -29,36 +29,36 @@ public class MemberControllerImpl extends BaseController implements MemberContro
 	MemberService memberService;
 	@Autowired
 	MemberVO memberVO;
-	
+
 	@Override
 	@RequestMapping(value="/login.do" ,method = RequestMethod.POST)
 	public ModelAndView login(@RequestParam Map<String, String> loginMap,
-			                  HttpServletRequest request, HttpServletResponse response) throws Exception {
+							  HttpServletRequest request, HttpServletResponse response) throws Exception {
 		ModelAndView mav = new ModelAndView();
-		 memberVO=memberService.login(loginMap);
+		memberVO=memberService.login(loginMap);
 		if(memberVO!= null && memberVO.getMember_id()!=null){
 			HttpSession session=request.getSession();
 			session=request.getSession();
 			session.setAttribute("isLogOn", true);
 			session.setAttribute("memberInfo",memberVO);
-			
+
 			String action=(String)session.getAttribute("action");
 			if(action!=null && action.equals("/order/orderEachGoods.do")){
 				mav.setViewName("forward:"+action);
 			}else{
-				mav.setViewName("redirect:/main/main.do");	
+				mav.setViewName("redirect:/main/main.do");
 			}
-			
-			
-			
+
+
+
 		}else{
-			String message="¾ÆÀÌµğ³ª  ºñ¹Ğ¹øÈ£°¡ Æ²¸³´Ï´Ù. ´Ù½Ã ·Î±×ÀÎÇØÁÖ¼¼¿ä";
+			String message="ì•„ì´ë””ë‚˜  ë¹„ë°€ë²ˆí˜¸ê°€ í‹€ë¦½ë‹ˆë‹¤. ë‹¤ì‹œ ë¡œê·¸ì¸í•´ì£¼ì„¸ìš”";
 			mav.addObject("message", message);
 			mav.setViewName("/member/loginForm");
 		}
 		return mav;
 	}
-	
+
 	@Override
 	@RequestMapping(value="/logout.do" ,method = RequestMethod.GET)
 	public ModelAndView logout(HttpServletRequest request, HttpServletResponse response) throws Exception {
@@ -69,11 +69,11 @@ public class MemberControllerImpl extends BaseController implements MemberContro
 		mav.setViewName("redirect:/main/main.do");
 		return mav;
 	}
-	
+
 	@Override
 	@RequestMapping(value="/addMember.do" ,method = RequestMethod.POST)
 	public ResponseEntity addMember(@ModelAttribute("memberVO") MemberVO _memberVO,
-			                HttpServletRequest request, HttpServletResponse response) throws Exception {
+									HttpServletRequest request, HttpServletResponse response) throws Exception {
 		response.setContentType("text/html; charset=UTF-8");
 		request.setCharacterEncoding("utf-8");
 		String message = null;
@@ -81,23 +81,23 @@ public class MemberControllerImpl extends BaseController implements MemberContro
 		HttpHeaders responseHeaders = new HttpHeaders();
 		responseHeaders.add("Content-Type", "text/html; charset=utf-8");
 		try {
-		    memberService.addMember(_memberVO);
-		    message  = "<script>";
-		    message +=" alert('È¸¿ø °¡ÀÔÀ» ¸¶ÃÆ½À´Ï´Ù.·Î±×ÀÎÃ¢À¸·Î ÀÌµ¿ÇÕ´Ï´Ù.');";
-		    message += " location.href='"+request.getContextPath()+"/member/loginForm.do';";
-		    message += " </script>";
-		    
+			memberService.addMember(_memberVO);
+			message  = "<script>";
+			message +=" alert('íšŒì› ê°€ì…ì„ ë§ˆì³¤ìŠµë‹ˆë‹¤.ë¡œê·¸ì¸ì°½ìœ¼ë¡œ ì´ë™í•©ë‹ˆë‹¤.');";
+			message += " location.href='"+request.getContextPath()+"/member/loginForm.do';";
+			message += " </script>";
+
 		}catch(Exception e) {
 			message  = "<script>";
-		    message +=" alert('ÀÛ¾÷ Áß ¿À·ù°¡ ¹ß»ıÇß½À´Ï´Ù. ´Ù½Ã ½ÃµµÇØ ÁÖ¼¼¿ä');";
-		    message += " location.href='"+request.getContextPath()+"/member/memberForm.do';";
-		    message += " </script>";
+			message +=" alert('ì‘ì—… ì¤‘ ì˜¤ë¥˜ê°€ ë°œìƒí–ˆìŠµë‹ˆë‹¤. ë‹¤ì‹œ ì‹œë„í•´ ì£¼ì„¸ìš”');";
+			message += " location.href='"+request.getContextPath()+"/member/memberForm.do';";
+			message += " </script>";
 			e.printStackTrace();
 		}
 		resEntity =new ResponseEntity(message, responseHeaders, HttpStatus.OK);
 		return resEntity;
 	}
-	
+
 	@Override
 	@RequestMapping(value="/overlapped.do" ,method = RequestMethod.POST)
 	public ResponseEntity overlapped(@RequestParam("id") String id,HttpServletRequest request, HttpServletResponse response) throws Exception{

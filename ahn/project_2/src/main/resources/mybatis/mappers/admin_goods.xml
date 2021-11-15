@@ -19,7 +19,8 @@
 		
 		<result property="goods_fileName" column="fileName" />
 		<result property="goods_sort" column="goods_sort" />
-		<result property="goods_contents_order" column="goods_contents_order" javaType="java.lang.String" jdbcType="CLOB" />
+		<result property="goods_manufacturer_intro" column="goods_manufacturer_intro" />
+		<result property="goods_manufactured_date" column="goods_manufactured_date" />
 	</resultMap>	
 
 	<resultMap id="imageResult" type="ImageFileVO">
@@ -82,7 +83,8 @@
 										goods_delivery_price,
 										goods_delivery_date,
 										goods_status,
-			              goods_contents_order)
+			              goods_manufacturer_intro,
+			              goods_manufactured_date)
 					  			values(
 					  			      #{goods_id},
 					  			      #{goods_sort},
@@ -96,7 +98,8 @@
 					  			      #{goods_delivery_price },
 					  			      #{goods_delivery_date },
 					  			      #{goods_status },
-					  			      #{goods_contents_order:VARCHAR}
+					  			      #{goods_manufacturer_intro }
+					  			      #{goods_manufactured_date }
 					 			 )
 		]]>
 	</insert> 
@@ -126,12 +129,14 @@
 			          goods_manufacturer,
 			          goods_sales_price,
 			          to_char(goods_creDate,'YYYY-MM-DD')  as goods_creDate,
+			          to_char(goods_manufactured_date,'YYYY-MM-DD')  as goods_manufactured_date
 			       from (
 			             select  goods_id,
 			             		 goods_title,
 			             		 goods_manufacturer,
 			             		 goods_sales_price,
 			             		 goods_creDate,
+			             		 goods_manufactured_date
 			              from t_shopping_goods 
 			                where  to_char(goods_creDate,'YYYY-MM-DD')  between #{beginDate} and #{endDate}
 			               order by goods_creDate desc
@@ -169,7 +174,7 @@
 	
 	<select id="selectGoodsDetail" resultMap="goodsResult"   parameterType="String"  >
 	    <![CDATA[
-		     select g.*,to_char(g.goods_published_date,'YYYY-MM-DD') as goods_published_date, d.fileName from t_shopping_goods g, t_goods_detail_image d
+		     select g.*,to_char(g.goods_manufactured_date,'YYYY-MM-DD') as goods_manufactured_date, d.fileName from t_shopping_goods g, t_goods_detail_image d
 	        where g.goods_id=d.goods_id
 	        and d.filetype='main_image'
 	        and g.goods_id=#{goods_id}
@@ -216,9 +221,12 @@
 	      <if test=" goods_status!='' and goods_status!=null">
 	        goods_status=#{goods_status},
 	      </if>
-	      <if test=" goods_contents_order!='' and goods_contents_order!=null">
-	        goods_contents_order=#{goods_contents_order:VARCHAR}
-	      </if>
+			<if test=" goods_manufacturer_intro!='' and goods_manufacturer_intro!=null">
+				goods_manufacturer_intro=#{goods_status},
+			</if>
+			<if test=" goods_manufactured_date!='' and goods_manufactured_date!=null">
+				goods_delivery_date=#{goods_delivery_date},
+			</if>
 	     </set>
 	    where 
 	    goods_id=#{goods_id}

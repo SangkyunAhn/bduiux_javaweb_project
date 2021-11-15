@@ -10,14 +10,14 @@
 
 <div id="ad_main_banner">
 	<ul class="bjqs">	 	
-	  <li><img width="775" height="145" src="${contextPath}/resources/image/main_banner01.jpg"></li>
-		<li><img width="775" height="145" src="${contextPath}/resources/image/main_banner02.jpg"></li>
-		<li><img width="775" height="145" src="${contextPath}/resources/image/main_banner03.jpg"></li> 
+	  <li><img width="775" height="145" src="${contextPath}/resources/image/main_banner01.PNG"></li>
+		<li><img width="775" height="145" src="${contextPath}/resources/image/main_banner02.PNG"></li>
+		<li><img width="775" height="145" src="${contextPath}/resources/image/main_banner03.PNG"></li> 
 	</ul>
 </div>
 <div class="main_book">
    <c:set  var="goods_count" value="0" />
-	<h3>베스트셀러</h3>
+	<h3>이젠볼링 추천상품</h3>
 	<c:forEach var="item" items="${goodsMap.bestseller }">
 	   <c:set  var="goods_count" value="${goods_count+1 }" />
 		<div class="book">
@@ -42,12 +42,12 @@
 </div>
 <div class="clear"></div>
 <div id="ad_sub_banner">
-	<img width="770" height="117" src="${contextPath}/resources/image/sub_banner01.jpg">
+	<img width="770" height="117" src="${contextPath}/resources/image/sub_banner01.PNG">
 </div>
 <div class="main_book" >
 <c:set  var="goods_count" value="0" />
-	<h3>새로 출판된 책</h3>
-	<c:forEach var="item" items="${goodsMap.newbook }" >
+	<h3>NEW 상품</h3>
+	<c:forEach var="item" items="${goodsMap.newgoods }" >
 	   <c:set  var="goods_count" value="${goods_count+1 }" />
 		<div class="book">
 		  <a href="${contextPath}/goods/goodsDetail.do?goods_id=${item.goods_id }">
@@ -71,13 +71,13 @@
 
 <div class="clear"></div>
 <div id="ad_sub_banner">
-	<img width="770" height="117" src="${contextPath}/resources/image/sub_banner02.jpg">
+	<img width="770" height="117" src="${contextPath}/resources/image/sub_banner02.PNG">
 </div>
 
 
 <div class="main_book" >
 <c:set  var="goods_count" value="0" />
-	<h3>스테디셀러</h3>
+	<h3>BEST 상품</h3>
 	<c:forEach var="item" items="${goodsMap.steadyseller }" >
 	   <c:set  var="goods_count" value="${goods_count+1 }" />
 		<div class="book">

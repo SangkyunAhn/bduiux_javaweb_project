@@ -11,8 +11,8 @@ public class OrderVO {
 	private String goods_title;
 	private int goods_sales_price;
 	private int total_goods_price;
-	private int cart_goods_qty; //Àå¹Ù±¸´Ï¿¡ ´ã±ä Á¦Ç° ¼ö
-	private int order_goods_qty; //ÃÖÁ¾ ÁÖ¹®  Á¦Ç° ¼ö
+	private int cart_goods_qty; //ì¥ë°”êµ¬ë‹ˆì— ë‹´ê¸´ ì œí’ˆ ìˆ˜
+	private int order_goods_qty; //ìµœì¢… ì£¼ë¬¸  ì œí’ˆ ìˆ˜
 	private String orderer_name;
 	private String receiver_name;
 	private String receiver_hp1;
@@ -21,7 +21,7 @@ public class OrderVO {
 	private String receiver_tel1;
 	private String receiver_tel2;
 	private String receiver_tel3;
-	
+
 	private String delivery_address;
 	private String delivery_message;
 	private String delivery_method;
@@ -29,19 +29,19 @@ public class OrderVO {
 	private String pay_method;
 	private String card_com_name;
 	private String card_pay_month;
-	private String pay_orderer_hp_num; //ÈŞ´ëÆù °áÁ¦ ÀüÈ­¹øÈ£
+	private String pay_orderer_hp_num; //íœ´ëŒ€í° ê²°ì œ ì „í™”ë²ˆí˜¸
 	private String pay_order_time;
-	private String delivery_state;  //ÇöÀç ÁÖ¹® »óÇ° ¹è¼Û »óÅÂ
-	
+	private String delivery_state;  //í˜„ì¬ ì£¼ë¬¸ ìƒí’ˆ ë°°ì†¡ ìƒíƒœ
+
 	private String final_total_price;
 	private int goods_qty;
 	private String goods_fileName;
 	private String orderer_hp;
-	
-	
-	
-	
-	
+
+
+
+
+
 	public int getOrder_seq_num() {
 		return order_seq_num;
 	}
@@ -72,10 +72,10 @@ public class OrderVO {
 	public void setGoods_title(String goods_title) {
 		this.goods_title = goods_title;
 	}
-	
-	
-	
-	
+
+
+
+
 	public int getGoods_sales_price() {
 		return goods_sales_price;
 	}
@@ -100,8 +100,8 @@ public class OrderVO {
 	public void setGoods_qty(int goods_qty) {
 		this.goods_qty = goods_qty;
 	}
-	
-	
+
+
 	public int getTotal_goods_price() {
 		return total_goods_price;
 	}
@@ -114,8 +114,8 @@ public class OrderVO {
 	public void setCart_goods_qty(int cart_goods_qty) {
 		this.cart_goods_qty = cart_goods_qty;
 	}
-	
-	
+
+
 	public int getOrder_goods_qty() {
 		return order_goods_qty;
 	}
@@ -134,9 +134,9 @@ public class OrderVO {
 	public void setReceiver_name(String receiver_name) {
 		this.receiver_name = receiver_name;
 	}
-	
-	
-	
+
+
+
 	public String getReceiver_hp1() {
 		return receiver_hp1;
 	}
@@ -152,8 +152,8 @@ public class OrderVO {
 	public String getReceiver_hp3() {
 		return receiver_hp3;
 	}
-	
-	
+
+
 	public String getReceiver_tel1() {
 		return receiver_tel1;
 	}
@@ -217,8 +217,8 @@ public class OrderVO {
 	public void setCard_pay_month(String card_pay_month) {
 		this.card_pay_month = card_pay_month;
 	}
-	
-	
+
+
 	public String getPay_order_time() {
 		return pay_order_time;
 	}
@@ -243,7 +243,7 @@ public class OrderVO {
 	public void setOrderer_hp(String orderer_hp) {
 		this.orderer_hp = orderer_hp;
 	}
-	
-	
+
+
 
 }

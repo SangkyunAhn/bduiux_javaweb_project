@@ -151,7 +151,7 @@ section#new_book #book .sort {
 section#new_book #book .title {
 	margin: 0px; padding: 2px 0px;
 }
-section#new_book #book .writer {
+section#new_book #book .manufacturer {
 	margin: 0px; padding: 2px 0px;
 }
 section#new_book #book .price {
@@ -198,7 +198,7 @@ article table#list_view td.goods_image {
 article table#list_view td.goods_description {
 	width: 500px; padding-left: 5px;
 }
-article table#list_view td.goods_description .writer_press {
+article table#list_view td.goods_description .data_manufacturer {
 	padding: 2px 5px; color: rgb(51, 102, 255);
 }
 article table#list_view td.goods_description p {
@@ -378,7 +378,7 @@ ul.tabs li.active a:hover {
 .tab_content img {
 	margin: 10px; padding: 5px;
 }
-.tab_content .writer {
+.tab_content .manufacturer {
 	margin: 10px 0px; padding: 5px; color: rgb(0, 0, 0); font-size: 1.2em; font-weight: bold; border-bottom-color: rgb(255, 153, 0); border-bottom-width: 1px; border-bottom-style: solid;
 }
 footer {
@@ -447,7 +447,7 @@ footer img {
   .list_view td.goods_description {
 	width: 500px; padding-left: 5px;
 }
- .list_view td.goods_description .writer_press {
+ .list_view td.goods_description .data_manufacturer {
 	padding: 2px 5px; color: rgb(51, 102, 255);
 }
   .list_view td.goods_description p {
@@ -579,7 +579,7 @@ article h1_TITLE {
 .main_book .book .title {
 	margin: 0px; padding: 2px 0px;
 }
-.main_book .book .writer {
+.main_book .book .manufacturer {
 	margin: 0px; padding: 2px 0px;
 }
 .main_book .book .price {

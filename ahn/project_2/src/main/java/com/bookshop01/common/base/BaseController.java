@@ -26,7 +26,7 @@ import com.bookshop01.goods.vo.ImageFileVO;
 
 public abstract class BaseController  {
 	private static final String CURR_IMAGE_REPO_PATH = "C:\\shopping\\file_repo";
-	
+
 	protected List<ImageFileVO> upload(MultipartHttpServletRequest multipartRequest) throws Exception{
 		List<ImageFileVO> fileList= new ArrayList<ImageFileVO>();
 		Iterator<String> fileNames = multipartRequest.getFileNames();
@@ -38,20 +38,20 @@ public abstract class BaseController  {
 			String originalFileName=mFile.getOriginalFilename();
 			imageFileVO.setFileName(originalFileName);
 			fileList.add(imageFileVO);
-			
+
 			File file = new File(CURR_IMAGE_REPO_PATH +"\\"+ fileName);
 			if(mFile.getSize()!=0){ //File Null Check
-				if(! file.exists()){ //°æ·Î»ó¿¡ ÆÄÀÏÀÌ Á¸ÀçÇÏÁö ¾ÊÀ» °æ¿ì
-					if(file.getParentFile().mkdirs()){ //°æ·Î¿¡ ÇØ´çÇÏ´Â µğ·ºÅä¸®µéÀ» »ı¼º
-							file.createNewFile(); //ÀÌÈÄ ÆÄÀÏ »ı¼º
+				if(! file.exists()){ //ê²½ë¡œìƒì— íŒŒì¼ì´ ì¡´ì¬í•˜ì§€ ì•Šì„ ê²½ìš°
+					if(file.getParentFile().mkdirs()){ //ê²½ë¡œì— í•´ë‹¹í•˜ëŠ” ë””ë ‰í† ë¦¬ë“¤ì„ ìƒì„±
+						file.createNewFile(); //ì´í›„ íŒŒì¼ ìƒì„±
 					}
 				}
-				mFile.transferTo(new File(CURR_IMAGE_REPO_PATH +"\\"+"temp"+ "\\"+originalFileName)); //ÀÓ½Ã·Î ÀúÀåµÈ multipartFileÀ» ½ÇÁ¦ ÆÄÀÏ·Î Àü¼Û
+				mFile.transferTo(new File(CURR_IMAGE_REPO_PATH +"\\"+"temp"+ "\\"+originalFileName)); //ì„ì‹œë¡œ ì €ì¥ëœ multipartFileì„ ì‹¤ì œ íŒŒì¼ë¡œ ì „ì†¡
 			}
 		}
 		return fileList;
 	}
-	
+
 	private void deleteFile(String fileName) {
 		File file =new File(CURR_IMAGE_REPO_PATH+"\\"+fileName);
 		try{
@@ -60,16 +60,16 @@ public abstract class BaseController  {
 			e.printStackTrace();
 		}
 	}
-	
-	
+
+
 	@RequestMapping(value="/*.do" ,method={RequestMethod.POST,RequestMethod.GET})
 	protected  ModelAndView viewForm(HttpServletRequest request, HttpServletResponse response) throws Exception {
 		String viewName=(String)request.getAttribute("viewName");
 		ModelAndView mav = new ModelAndView(viewName);
 		return mav;
 	}
-	
-	
+
+
 	protected String calcSearchPeriod(String fixedSearchPeriod){
 		String beginDate=null;
 		String endDate=null;
@@ -81,12 +81,12 @@ public abstract class BaseController  {
 		String beginDay=null;
 		DecimalFormat df = new DecimalFormat("00");
 		Calendar cal=Calendar.getInstance();
-		
+
 		endYear   = Integer.toString(cal.get(Calendar.YEAR));
 		endMonth  = df.format(cal.get(Calendar.MONTH) + 1);
 		endDay   = df.format(cal.get(Calendar.DATE));
 		endDate = endYear +"-"+ endMonth +"-"+endDay;
-		
+
 		if(fixedSearchPeriod == null) {
 			cal.add(cal.MONTH,-4);
 		}else if(fixedSearchPeriod.equals("one_week")) {
@@ -102,13 +102,13 @@ public abstract class BaseController  {
 		}else if(fixedSearchPeriod.equals("four_month")) {
 			cal.add(cal.MONTH,-4);
 		}
-		
+
 		beginYear   = Integer.toString(cal.get(Calendar.YEAR));
 		beginMonth  = df.format(cal.get(Calendar.MONTH) + 1);
 		beginDay   = df.format(cal.get(Calendar.DATE));
 		beginDate = beginYear +"-"+ beginMonth +"-"+beginDay;
-		
+
 		return beginDate+","+endDate;
 	}
-	
+
 }

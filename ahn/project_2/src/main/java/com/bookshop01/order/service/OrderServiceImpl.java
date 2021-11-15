@@ -17,19 +17,19 @@ import com.bookshop01.order.vo.OrderVO;
 public class OrderServiceImpl implements OrderService {
 	@Autowired
 	OrderDAO orderDAO;
-	
+
 	public List<OrderVO> listMyOrderGoods(OrderVO orderVO) throws Exception{
 		List<OrderVO> orderGoodsList;
 		orderGoodsList=orderDAO.listMyOrderGoods(orderVO);
 		return orderGoodsList;
 	}
-	
+
 	public void addNewOrder(List<OrderVO> myOrderList) throws Exception{
 		orderDAO.insertNewOrder(myOrderList);
-		//Ä«Æ®¿¡¼­ ÁÖ¹® »óÇ° Á¦°ÅÇÑ´Ù.
+		//ì¹´íŠ¸ì—ì„œ ì£¼ë¬¸ ìƒí’ˆ ì œê±°í•œë‹¤.
 		orderDAO.removeGoodsFromCart(myOrderList);
-	}	
-	
+	}
+
 	public OrderVO findMyOrder(String order_id) throws Exception{
 		return orderDAO.findMyOrder(order_id);
 	}

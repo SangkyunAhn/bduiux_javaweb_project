@@ -19,11 +19,11 @@ import com.bookshop01.goods.vo.GoodsVO;
 public class CartServiceImpl  implements CartService{
 	@Autowired
 	CartDAO cartDAO;
-	
+
 	public Map<String ,List> myCartList(CartVO cartVO) throws Exception{
 		Map<String,List> cartMap=new HashMap<String,List>();
 		List<CartVO> myCartList=cartDAO.selectCartList(cartVO);
-		if(myCartList.size()==0){ //Ä«Æ®¿¡ ÀúÀåµÈ »óÇ°ÀÌ¾ø´Â °æ¿ì
+		if(myCartList.size()==0){ //ì¹´íŠ¸ì— ì €ì¥ëœ ìƒí’ˆì´ì—†ëŠ” ê²½ìš°
 			return null;
 		}
 		List<GoodsVO> myGoodsList=cartDAO.selectGoodsList(myCartList);
@@ -31,15 +31,15 @@ public class CartServiceImpl  implements CartService{
 		cartMap.put("myGoodsList",myGoodsList);
 		return cartMap;
 	}
-	
+
 	public boolean findCartGoods(CartVO cartVO) throws Exception{
-		 return cartDAO.selectCountInCart(cartVO);
-		
-	}	
+		return cartDAO.selectCountInCart(cartVO);
+
+	}
 	public void addGoodsInCart(CartVO cartVO) throws Exception{
 		cartDAO.insertGoodsInCart(cartVO);
 	}
-	
+
 	public boolean modifyCartQty(CartVO cartVO) throws Exception{
 		boolean result=true;
 		cartDAO.updateCartGoodsQty(cartVO);
@@ -48,5 +48,5 @@ public class CartServiceImpl  implements CartService{
 	public void removeCartGoods(int cart_id) throws Exception{
 		cartDAO.deleteCartGoods(cart_id);
 	}
-	
+
 }

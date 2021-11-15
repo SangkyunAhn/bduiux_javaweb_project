@@ -32,22 +32,27 @@ function fn_modify_goods(goods_id, attribute){
 		value=frm_mod_goods.goods_sort.value;
 	}else if(attribute=='goods_title'){
 		value=frm_mod_goods.goods_title.value;
-	}else if(attribute=='goods_manufacturer'){
-		value=frm_mod_goods.goods_manufacturer.value;
+
+	}else if(attribute=='goods_publisher'){
+		value=frm_mod_goods.goods_publisher.value;
 	}else if(attribute=='goods_price'){
 		value=frm_mod_goods.goods_price.value;
 	}else if(attribute=='goods_sales_price'){
 		value=frm_mod_goods.goods_sales_price.value;
 	}else if(attribute=='goods_point'){
 		value=frm_mod_goods.goods_point.value;
+	}else if(attribute=='goods_manufactured_date'){
+		value=frm_mod_goods.goods_manufactured_date.value;
+
+
 	}else if(attribute=='goods_delivery_price'){
 		value=frm_mod_goods.goods_delivery_price.value;
 	}else if(attribute=='goods_delivery_date'){
 		value=frm_mod_goods.goods_delivery_date.value;
 	}else if(attribute=='goods_status'){
 		value=frm_mod_goods.goods_status.value;
-	}else if(attribute=='goods_contents_order'){
-		value=frm_mod_goods.goods_contents_order.value;
+	}else if(attribute=='goods_manufacturer_intro'){
+		value=frm_mod_goods.goods_manufacturer_intro.value;
 	}
 	$.ajax({
 		type : "post",
@@ -165,26 +170,25 @@ function fn_modify_goods(goods_id, attribute){
 	<!-- 내용 들어 가는 곳 -->
 	<DIV id="container">
 		<UL class="tabs">
-			<li><A href="#tab1">상품정보</A></li>
-			<li><A href="#tab2">상품목차</A></li>
-			<li><A href="#tab4">상품소개</A></li>
-			<li><A href="#tab7">상품이미지</A></li>
+			<li><A href="#tab1">제품정보</A></li>
+			<li><A href="#tab2">제품회사</A></li>
+			<li><A href="#tab3">제품이미지</A></li>
 		</UL>
 		<DIV class="tab_container">
 			<DIV class="tab_content" id="tab1">
 				<table >
-			<tr >
+			<tr >ㄴ
 				<td width=200 >상품분류</td>
 				<td width=500>
 				  <select name="goods_sort">
 					<c:choose>
-				      <c:when test="${goods.goods_sort=='컴퓨터와 인터넷' }">
-						<option value="컴퓨터와 인터넷" selected>컴퓨터와 인터넷 </option>
-				  	    <option value="디지털 기기">디지털 기기  </option>
+				      <c:when test="${goods.goods_sort=='볼링공/하드볼' }">
+						<option value="컴퓨터와 인터넷" selected>볼링공/하드볼 </option>
+				  	    <option value="디지털 기기">볼링공/소프트볼  </option>
 				  	  </c:when>
-				  	  <c:when test="${goods.goods_sort=='디지털 기기' }">
-						<option value="컴퓨터와 인터넷" >컴퓨터와 인터넷 </option>
-				  	    <option value="디지털 기기" selected>디지털 기기  </option>
+				  	  <c:when test="${goods.goods_sort=='볼링공/소프트볼' }">
+						<option value="컴퓨터와 인터넷" >볼링공/하드볼 </option>
+				  	    <option value="디지털 기기" selected>볼링공/소프트볼  </option>
 				  	  </c:when>
 				  	</c:choose>
 					</select>
@@ -194,18 +198,19 @@ function fn_modify_goods(goods_id, attribute){
 				</td>
 			</tr>
 			<tr >
-				<td >상품이름</td>
+				<td >제품이름</td>
 				<td><input name="goods_title" type="text" size="40"  value="${goods.goods_title }"/></td>
 				<td>
 				 <input  type="button" value="수정반영"  onClick="fn_modify_goods('${goods.goods_id }','goods_title')"/>
 				</td>
 			</tr>
 
+
 			<tr>
-				<td >제조사</td>
-				<td><input name="goods_manufacturerr" type="text" size="40" value="${goods.goods_manufacturer }" /></td>
-								<td>
-				 <input  type="button" value="수정반영"  onClick="fn_modify_goods('${goods.goods_id }','goods_manufacturer')"/>
+				<td >제품회사</td>
+				<td><input name="goods_manufacturer" type="text" size="40" value="${goods.goods_manufacturer }" /></td>
+			     <td>
+				  <input  type="button" value="수정반영"  onClick="fn_modify_goods('${goods.goods_id }','goods_manufacturer')"/>
 				</td>
 
 			</tr>
@@ -237,15 +242,17 @@ function fn_modify_goods(goods_id, attribute){
 
 			</tr>
 
-
 			<tr>
-				<td >상품 총 페이지수</td>
-				<td><input name="goods_total_page" type="text" size="40"  value="${goods.goods_total_page }"/></td>
+				<td >상품제조일</td>
 				<td>
-				 <input  type="button" value="수정반영"  onClick="fn_modify_goods('${goods.goods_id }','goods_total_page"/>
+				  <input  name="goods_manufactured_date"  type="date"  value="${goods.goods_manufactured_date }" />
+				</td>
+				<td>
+				 <input  type="button" value="수정반영"  onClick="fn_modify_goods('${goods.goods_id }','goods_manufactured_date')"/>
 				</td>
 
 			</tr>
+
 
 			<tr>
 				<td >상품 배송비</td>
@@ -270,9 +277,9 @@ function fn_modify_goods(goods_id, attribute){
 				<td >상품종류</td>
 				<td>
 				<select name="goods_status">
-				  <option value="bestseller"  >베스트셀러</option>
-				  <option value="steadyseller" >스테디셀러</option>
-				  <option value="newbook" >신간</option>
+				  <option value="bestseller"  >베스트상품</option>
+				  <option value="steadyseller" >인기상품</option>
+				  <option value="newgoods" >신상품</option>
 				  <option value="on_sale" >판매중</option>
 				  <option value="buy_out"  selected>품절</option>
 				  <option value="out_of_print" >절판</option>
@@ -290,41 +297,11 @@ function fn_modify_goods(goods_id, attribute){
 			</tr>
 				</table>
 			</DIV>
-			<DIV class="tab_content" id="tab2">
-				<h4>책목차</h4>
-				<table>
-				<tr>
-					<td >상품목차</td>
-					<td><textarea  rows="100" cols="80" name="goods_contents_order">
-					  ${goods.goods_contents_order }
-					</textarea>
-					</td>
-					<td>
-					&nbsp;&nbsp;&nbsp;&nbsp;
-					 <input  type="button" value="수정반영"  onClick="fn_modify_goods('${goods.goods_id }','goods_contents_order')"/>
-					</td>
-				</tr>
-				</table>
-			</DIV>
-			<DIV class="tab_content" id="tab4">
-				<H4>상품소개</H4>
-				<P>
-				<table>
-					<tr>
-						<td>상품소개</td>
-						<td><textarea  rows="100" cols="80" name="goods_intro">
-						${goods.goods_intro }
-						</textarea>
-						</td>
-						<td>
-						&nbsp;&nbsp;&nbsp;&nbsp;
-						 <input  type="button" value="수정반영"  onClick="fn_modify_goods('${goods.goods_id }','goods_intro')"/>
-						</td>
-					</tr>
-			    </table>
-				</P>
-			</DIV>
-			<DIV class="tab_content" id="tab7">
+
+
+
+
+			<DIV class="tab_content" id="tab3">
 			   <form id="FILE_FORM" method="post" enctype="multipart/form-data"  >
 				<h4>상품이미지</h4>
 				 <table>

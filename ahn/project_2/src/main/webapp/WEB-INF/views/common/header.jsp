@@ -70,7 +70,7 @@
 <body>
 	<div id="logo">
 	<a href="${contextPath}/main/main.do">
-		<img width="176" height="80" alt="booktopia" src="${contextPath}/resources/image/Booktopia_Logo.jpg">
+		<img width="176" height="80" alt="EZENBOWLING" src="${contextPath}/resources/image/Logo.png">
 		</a>
 	</div>
 	<div id="head_link">

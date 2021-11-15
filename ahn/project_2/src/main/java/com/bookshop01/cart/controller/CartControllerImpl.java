@@ -33,7 +33,7 @@ public class CartControllerImpl extends BaseController implements CartController
 	CartVO cartVO;
 	@Autowired
 	MemberVO memberVO;
-	
+
 	@RequestMapping(value="/myCartList.do" ,method = RequestMethod.GET)
 	public ModelAndView myCartMain(HttpServletRequest request, HttpServletResponse response)  throws Exception {
 		String viewName=(String)request.getAttribute("viewName");
@@ -43,19 +43,19 @@ public class CartControllerImpl extends BaseController implements CartController
 		String member_id=memberVO.getMember_id();
 		cartVO.setMember_id(member_id);
 		Map<String ,List> cartMap=cartService.myCartList(cartVO);
-		session.setAttribute("cartMap", cartMap);//Àå¹Ù±¸´Ï ¸ñ·Ï È­¸é¿¡¼­ »óÇ° ÁÖ¹® ½Ã »ç¿ëÇÏ±â À§ÇØ¼­ Àå¹Ù±¸´Ï ¸ñ·ÏÀ» ¼¼¼Ç¿¡ ÀúÀåÇÑ´Ù.
+		session.setAttribute("cartMap", cartMap);//ì¥ë°”êµ¬ë‹ˆ ëª©ë¡ í™”ë©´ì—ì„œ ìƒí’ˆ ì£¼ë¬¸ ì‹œ ì‚¬ìš©í•˜ê¸° ìœ„í•´ì„œ ì¥ë°”êµ¬ë‹ˆ ëª©ë¡ì„ ì„¸ì…˜ì— ì €ì¥í•œë‹¤.
 		//mav.addObject("cartMap", cartMap);
 		return mav;
 	}
 	@RequestMapping(value="/addGoodsInCart.do" ,method = RequestMethod.POST,produces = "application/text; charset=utf8")
 	public  @ResponseBody String addGoodsInCart(@RequestParam("goods_id") int goods_id,
-			                    HttpServletRequest request, HttpServletResponse response)  throws Exception{
+												HttpServletRequest request, HttpServletResponse response)  throws Exception{
 		HttpSession session=request.getSession();
 		memberVO=(MemberVO)session.getAttribute("memberInfo");
 		String member_id=memberVO.getMember_id();
-		
+
 		cartVO.setMember_id(member_id);
-		//Ä«Æ® µî·ÏÀü¿¡ ÀÌ¹Ì µî·ÏµÈ Á¦Ç°ÀÎÁö ÆÇº°ÇÑ´Ù.
+		//ì¹´íŠ¸ ë“±ë¡ì „ì— ì´ë¯¸ ë“±ë¡ëœ ì œí’ˆì¸ì§€ íŒë³„í•œë‹¤.
 		cartVO.setGoods_id(goods_id);
 		cartVO.setMember_id(member_id);
 		boolean isAreadyExisted=cartService.findCartGoods(cartVO);
@@ -67,11 +67,11 @@ public class CartControllerImpl extends BaseController implements CartController
 			return "add_success";
 		}
 	}
-	
+
 	@RequestMapping(value="/modifyCartQty.do" ,method = RequestMethod.POST)
 	public @ResponseBody String  modifyCartQty(@RequestParam("goods_id") int goods_id,
-			                                   @RequestParam("cart_goods_qty") int cart_goods_qty,
-			                                    HttpServletRequest request, HttpServletResponse response)  throws Exception{
+											   @RequestParam("cart_goods_qty") int cart_goods_qty,
+											   HttpServletRequest request, HttpServletResponse response)  throws Exception{
 		HttpSession session=request.getSession();
 		memberVO=(MemberVO)session.getAttribute("memberInfo");
 		String member_id=memberVO.getMember_id();
@@ -79,18 +79,18 @@ public class CartControllerImpl extends BaseController implements CartController
 		cartVO.setMember_id(member_id);
 		cartVO.setCart_goods_qty(cart_goods_qty);
 		boolean result=cartService.modifyCartQty(cartVO);
-		
+
 		if(result==true){
-		   return "modify_success";
+			return "modify_success";
 		}else{
-			  return "modify_failed";	
+			return "modify_failed";
 		}
-		
+
 	}
-	
+
 	@RequestMapping(value="/removeCartGoods.do" ,method = RequestMethod.POST)
 	public ModelAndView removeCartGoods(@RequestParam("cart_id") int cart_id,
-			                          HttpServletRequest request, HttpServletResponse response)  throws Exception{
+										HttpServletRequest request, HttpServletResponse response)  throws Exception{
 		ModelAndView mav=new ModelAndView();
 		cartService.removeCartGoods(cart_id);
 		mav.setViewName("redirect:/cart/myCartList.do");

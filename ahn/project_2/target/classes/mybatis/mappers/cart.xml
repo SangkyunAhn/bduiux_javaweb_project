@@ -25,7 +25,8 @@
 		
 		<result property="goods_fileName" column="fileName" />
 		<result property="goods_sort" column="goods_sort" />
-		<result property="goods_contents_order" column="goods_contents_order" />
+		<result property="goods_manufacturer_intro" column="goods_manufacturer_intro" />
+		<result property="goods_manufactured_date" column="goods_manufactured_date" />
 	</resultMap>
 	
 	<select id="selectCartList" resultMap="cartResult"   >

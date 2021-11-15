@@ -43,25 +43,25 @@
 </c:when>
 <c:otherwise>
 	<li>
-		<h3>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;볼링용품</h3>
+		<h3>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;볼링공/소프트볼</h3>
 		<ul>
-			<li><a href="${contextPath}/goods/goodsList.do">볼링볼</a></li>
-			<li><a href="#">볼링가방</a></li>
-			<li><a href="#">볼링신발</a></li>
-			<li><a href="#">볼링아대</a></li>
-			<li><a href="#">악세사리</a></li>
-			<li><a href="#">볼링핀</a></li>
+			<li><a href="${contextPath}/goods/goodsList.do">[1]등급/헤비오일전용</a></li>
+			<li><a href="#">[2]등급/미디엄헤비전용</a></li>
+			<li><a href="#">[3]등급/미디엄전용</a></li>
+			<li><a href="#">[4]등급/미디엄라이트전용</a></li>
+			<li><a href="#">초보자/라이트전용 </a></li>
+			<li><a href="#">하드볼/스페어처리용</a></li>
 		</ul>
 	</li>
 	<li>
-		<h3>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;음반</h3>
+		<h3>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;볼링용품</h3>
 		<ul>
-			<li><a href="#">가요</a></li>
-			<li><a href="#">록</a></li>
-			<li><a href="#">클래식</a></li>
-			<li><a href="#">뉴에이지</a></li>
-			<li><a href="#">재즈</a></li>
-			<li><a href="#">기타</a></li>
+			<li><a href="#">볼링아대</a></li>
+			<li><a href="#">볼링가방</a></li>
+			<li><a href="#">볼링화</a></li>
+			<li><a href="#">테이프</a></li>
+			<li><a href="#">볼 클리너/볼타월</a></li>
+			<li><a href="#">퍼프볼/로진백</a></li>
 		</ul>
 	</li>
  </c:otherwise>
@@ -70,7 +70,7 @@
 </nav>
 <div class="clear"></div>
 <div id="banner">
-	<a href="#"><img width="190" height="163" src="${contextPath}/resources/image/n-pay.jpg"> </a>
+	<a href="#"><img width="190" height="163" src="${contextPath}/resources/image/event.jpg"> </a>
 </div>
 <DIV id="notice">
 	<H2>공지사항</H2>
@@ -84,12 +84,12 @@
 
 
 <div id="banner">
-	<a href="#"><img width="190" height="362" src="${contextPath}/resources/image/side_banner1.jpg"></a>
+	<a href="#"><img width="190" height="362" src="${contextPath}/resources/image/side_banner.jpg"></a>
 </div>
 <div id="banner">
-	<a href="#"><img width="190" height="104" src="${contextPath}/resources/image/call_center_logo.jpg"></a>
+	<a href="#"><img width="200" height="104" src="${contextPath}/resources/image/side_banner2.jpg"></a>
 </div>
 <div id="banner">
-	<a href="#"><img width="190" height="69" src="${contextPath}/resources/image/QnA_logo.jpg"></a>
+	<a href="#"><img width="200" height="69" src="${contextPath}/resources/image/QnA_logo.jpg"></a>
 </div>
 </html>
