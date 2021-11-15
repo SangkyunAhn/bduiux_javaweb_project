@@ -221,7 +221,7 @@ function fn_order_each_goods(goods_id,goods_title,goods_sales_price,fileName){
 				<h4>회사소개</h4>
 				<p>
 				<div class="manufacturer">회사명 : ${goods.goods_manufacturer}</div>
-				 <p>${fn:replace(goods.goods_writer_intro,crcn,br) }</p>
+				 <!-- <p>${fn:replace(goods.goods_writer_intro,crcn,br) }</p> -->
 			<div class="tab_content" id="tab6">
 				<h4>리뷰</h4>
 			</div>

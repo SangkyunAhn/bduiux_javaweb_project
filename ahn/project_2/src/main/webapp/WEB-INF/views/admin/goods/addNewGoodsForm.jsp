@@ -51,14 +51,9 @@
 				<td >제품이름</td>
 				<td><input name="goods_title" type="text" size="40" /></td>
 			</tr>
-			
 			<tr>
-				<td >저자</td>
-				<td><input name="goods_writer" type="text" size="40" /></td>
-			</tr>
-			<tr>
-				<td >출판사</td>
-				<td><input name="goods_publisher" type="text" size="40" /></td>
+				<td >제조사</td>
+				<td><input name="goods_manufacturer" type="text" size="40" /></td>
 			</tr>
 			<tr>
 				<td >제품정가</td>
@@ -75,21 +70,7 @@
 				<td >제품 구매 포인트</td>
 				<td><input name="goods_point" type="text" size="40" /></td>
 			</tr>
-			
-			<tr>
-				<td >제품출판일</td>
-				<td><input  name="goods_published_date"  type="date" size="40" /></td>
-			</tr>
-			
-			<tr>
-				<td >제품 총 페이지수</td>
-				<td><input name="goods_total_page" type="text" size="40" /></td>
-			</tr>
-			
-			<tr>
-				<td >ISBN</td>
-				<td><input name="goods_isbn" type="text" size="40" /></td>
-			</tr>
+
 			<tr>
 				<td >제품 배송비</td>
 				<td><input name="goods_delivery_price" type="text" size="40" /></td>
@@ -127,42 +108,6 @@
 					<td><textarea  rows="100" cols="80" name="goods_contents_order"></textarea></td>
 				</tr>
 				</table>	
-			</div>
-			<div class="tab_content" id="tab3">
-				<H4>제품 저자 소개</H4>
-				 <table>
-  				 <tr>
-					<td>제품 저자 소개</td>
-					<td><textarea  rows="100" cols="80" name="goods_writer_intro"></textarea></td>
-			    </tr>
-			   </table>
-			</div>
-			<div class="tab_content" id="tab4">
-				<H4>제품소개</H4>
-				<table>
-					<tr>
-						<td >제품소개</td>
-						<td><textarea  rows="100" cols="80" name="goods_intro"></textarea></td>
-				    </tr>
-			    </table>
-			</div>
-			<div class="tab_content" id="tab5">
-				<H4>출판사 제품 평가</H4>
-				<table>
-				 <tr>
-					<td>출판사 제품 평가</td>
-					<td><textarea  rows="100" cols="80" name="goods_publisher_comment"></textarea></td>
-			    </tr>
-			</table>
-			</div>
-			<div class="tab_content" id="tab6">
-				<H4>추천사</H4>
-				 <table>
-					 <tr>
-					   <td>추천사</td>
-					    <td><textarea  rows="100" cols="80" name="goods_recommendation"></textarea></td>
-				    </tr>
-			    </table>
 			</div>
 			<div class="tab_content" id="tab7">
 				<h4>상품이미지</h4>

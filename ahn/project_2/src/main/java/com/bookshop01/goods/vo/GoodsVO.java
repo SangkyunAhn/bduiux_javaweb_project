@@ -7,6 +7,7 @@ public class GoodsVO {
 
 	private int goods_id;
 	private String goods_title;
+	private String goods_manufacturer;
 	private int goods_price;
 	private String goods_sort;
 	private int goods_sales_price;
@@ -33,6 +34,14 @@ public class GoodsVO {
 
 	public void setGoods_title(String goods_title) {
 		this.goods_title = goods_title;
+	}
+
+	public String getGoods_manufacturer() {
+		return goods_manufacturer;
+	}
+
+	public void setGoods_manufacturer(String goods_manufacturer) {
+		this.goods_manufacturer = goods_manufacturer;
 	}
 
 	public int getGoods_price() {
