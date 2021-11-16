@@ -1,5 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=utf-8"
-	pageEncoding="euc-kr"
+	pageEncoding="utf-8"
 	isELIgnored="false" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
@@ -177,7 +177,7 @@ function fn_modify_goods(goods_id, attribute){
 		<DIV class="tab_container">
 			<DIV class="tab_content" id="tab1">
 				<table >
-			<tr >ㄴ
+			<tr >
 				<td width=200 >상품분류</td>
 				<td width=500>
 				  <select name="goods_sort">

@@ -29,6 +29,7 @@
 	<div class="tab_container" id="container">
 		<ul class="tabs">
 			<li><a href="#tab1">상품정보</a></li>
+			<li><a href="#tab2">회사소개</a></li>
 			<li><a href="#tab3">상품이미지</a></li>
 		</ul>
 		<div class="tab_container">
@@ -106,7 +107,15 @@
 			</div>
 			
 			
-		
+		    <div class="tab_content" id="tab2">
+            	<H4>회사소개</H4>
+            	<table>
+            		<tr>
+            		    <td>회사소개</td>
+            			<td><textarea  rows="100" cols="80" name="goods_manufacturer_intro"></textarea></td>
+            		</tr>
+            	</table>
+            </div>
 			
 			<div class="tab_content" id="tab3">
 				<h4>상품이미지</h4>
