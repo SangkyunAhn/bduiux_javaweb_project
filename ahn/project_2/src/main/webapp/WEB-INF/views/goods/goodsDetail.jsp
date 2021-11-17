@@ -133,7 +133,7 @@ pageContext.setAttribute("br", "<br/>"); //br 태그
 		<h1>소프트볼</h1>
 		<h2>볼링공 &gt; 소프트볼 &gt; [1]등급/헤비오일전용</h2>
 		<h3>${goods.goods_title }</h3>
-		<h4>회사| ${goods.goods_publisher}</h4>
+		<h4>회사| ${goods.goods_manufacturer}</h4>
 	</hgroup>
 	<div id="goods_image">
 		<figure>
