@@ -9,11 +9,11 @@
 <head>
 <meta charset="utf-8">
 <script>
-function search_goods_list(fixeSearchPeriod){
+function search_goods_list(fixedSearchPeriod){
 	var formObj=document.createElement("form");
 	var i_fixedSearch_period = document.createElement("input");
 	i_fixedSearch_period.name="fixedSearchPeriod";
-	i_fixedSearch_period.value=searchPeriod;
+	i_fixedSearch_period.value=fixedSearchPeriod;
     formObj.appendChild(i_fixedSearch_period);
     document.body.appendChild(formObj); 
     formObj.method="get";

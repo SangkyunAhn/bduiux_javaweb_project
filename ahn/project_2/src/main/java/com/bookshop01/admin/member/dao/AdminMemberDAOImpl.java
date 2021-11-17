@@ -10,7 +10,7 @@ import org.springframework.stereotype.Repository;
 
 import com.bookshop01.member.vo.MemberVO;
 
-@Repository("adminMemberDao")
+@Repository("adminMemberDAO")
 public class AdminMemberDAOImpl  implements AdminMemberDAO{
 	@Autowired
 	private SqlSession sqlSession;

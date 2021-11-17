@@ -6,7 +6,6 @@
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %> 
 <%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions" %>
 
-
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
@@ -18,13 +17,11 @@ function search_member(search_period){
 	endDate=date[1];
 	//alert("beginDate:"+beginDate+",endDate:"+endDate);
 	//return ;
-	
-	var formObj=document.createElement("form");
     
 	var formObj=document.createElement("form");
 	var i_beginDate = document.createElement("input"); 
 	var i_endDate = document.createElement("input");
-    
+
 	i_beginDate.name="beginDate";
 	i_beginDate.value=beginDate;
 	i_endDate.name="endDate";
@@ -34,7 +31,7 @@ function search_member(search_period){
     formObj.appendChild(i_endDate);
     document.body.appendChild(formObj); 
     formObj.method="get";
-    formObj.action="/bookshop01/admin/member/adminMemberMain.do";
+    formObj.action="${pageContext.request.contextPath}/admin/member/adminMemberMain.do";
     formObj.submit();
 }
 
@@ -129,7 +126,7 @@ function fn_member_detail(order_id){
     formObj.appendChild(i_order_id);
     document.body.appendChild(formObj); 
     formObj.method="post";
-    formObj.action="/bookshop01/admin/member/memberDetail.do";
+    formObj.action="${pageContext.request.contextPath}/admin/member/memberDetail.do";
     formObj.submit();
 	
 }
@@ -214,7 +211,7 @@ function fn_detail_search(){
     formObj.appendChild(i_search_word);
     document.body.appendChild(formObj); 
     formObj.method="post";
-    formObj.action="/bookshop01/admin/member/memberDetail.do";
+    formObj.action="${pageContext.request.contextPath}/admin/member/memberDetail.do";
     formObj.submit();
 	
 }
@@ -408,7 +405,7 @@ function fn_detail_search(){
 						<option value="member_name">회원이름</option>
 						<option value="member_id">회원아이디</option>
 						<option value="member_hp_num">회원휴대폰번호</option>
-						<option value="member_addr">회원주소</option>
+						<!-- <option value="member_addr">회원주소</option> -->
 					</select>
 					<input  type="text"  size="30" name="t_search_word" disabled />  
 					<input   type="button"  value="조회" name="btn_search" onClick="fn_detail_search()" disabled  />
@@ -476,7 +473,7 @@ function fn_detail_search(){
 				</tr>
 		</c:forEach>
 	</c:otherwise>
-  </c:choose>	
+  </c:choose>
          <tr>
              <td colspan=8 class="fixed">
                  <c:forEach   var="page" begin="1" end="10" step="1" >

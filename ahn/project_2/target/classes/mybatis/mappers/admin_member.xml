@@ -34,11 +34,11 @@
 		<result property="joinDate" column="joinDate" />
 		<result property="del_yn" column="del_yn" />
 	</resultMap>
-<select id="listMember" resultMap="memberResult"   parameterType="java.util.HashMap"  >
+<select id="listMember" resultMap="memberResult" parameterType="java.util.HashMap"  >
 		  select * from (
 			    select rowNum as recNum,t.*
 			       from (
-			              select  *  from t_shoping_member 
+			              select  *  from t_shopping_member
 			              where to_char(joinDate,'yyyy-mm-dd')  between #{beginDate} and #{endDate}
 			                <if test="search_type=='member_id'">
 			                  AND member_id=#{search_word}
@@ -47,7 +47,7 @@
 			                  AND member_name=#{search_word}
 			                </if>
 			                <if test="search_type=='member_hp_num'">
-			                   AND hp1||hp2||hp3=#{search_word} 
+			                   AND hp1||hp2||hp3=#{search_word}
 			                </if>
 			              order by joinDate desc
 					    ) t
@@ -58,14 +58,14 @@
 	
     <select id="memberDetail" resultMap="memberResult"   parameterType="String"  >
 	    <![CDATA[
-		    select * from t_shoping_member
+		    select * from t_shopping_member
             where member_id=#{member_id}
     	]]>
 	</select>	
 	
 
 	<update id="modifyMemberInfo" parameterType="java.util.HashMap">
-	   update t_shoping_member
+	   update t_shopping_member
 			   <set>
 			      <if test=" member_pw!='' and member_pw!=null">
 			        member_pw=#{member_pw},
@@ -122,10 +122,10 @@
 			         jibunAddress=#{jibunAddress},
 			      </if>
 			      <if test=" namujiAddress!='' and namujiAddress!=null">
-			         namujiAddress=#{namujiAddress}
+			         namujiAddress=#{namujiAddress},
 			      </if>
 			      <if test=" del_yn!='' and del_yn!=null">
-			         del_yn=#{del_yn}
+			         del_yn=#{del_yn},
 			      </if>
 			   </set>
 		where 
