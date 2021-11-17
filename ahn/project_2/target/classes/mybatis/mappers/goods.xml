@@ -40,7 +40,7 @@
 			select g.*,d.fileName from t_shopping_goods g, t_goods_detail_image d
         	where g.goods_id=d.goods_id 
         	and d.filetype='main_image'
-        	and goods_status=#{goodsStatus}
+        	and goods_status=#{goods_status}
             order by g.goods_creDate desc)  t
 	             where   rowNum <16
 	    ]]>

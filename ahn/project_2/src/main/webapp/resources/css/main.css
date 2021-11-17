@@ -142,7 +142,7 @@ section#new_book #book {
 section#new_book #book img {
 	margin: 5px 0px 0px;
 }
-section#new_bookr .no_back#book {
+section#new_book .no_back#book {
 	background-image: none;
 }
 section#new_book #book .sort {

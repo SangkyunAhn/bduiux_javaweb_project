@@ -95,6 +95,7 @@
 				  <option value="newgoods" selected >신상품</option>
 				  <option value="on_sale" >판매중</option>
 				  <option value="buy_out" >품절</option>
+				  <option value="out_of_manufacturing" >단종</option>
 				</select>
 				</td>
 			</tr>

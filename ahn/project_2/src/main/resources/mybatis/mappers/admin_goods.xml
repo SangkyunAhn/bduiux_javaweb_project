@@ -98,7 +98,7 @@
 					  			      #{goods_delivery_price },
 					  			      #{goods_delivery_date },
 					  			      #{goods_status },
-					  			      #{goods_manufacturer_intro }
+					  			      #{goods_manufacturer_intro },
 					  			      #{goods_manufactured_date }
 					 			 )
 		]]>
@@ -222,9 +222,12 @@
 	        goods_status=#{goods_status},
 	      </if>
 			<if test=" goods_manufacturer_intro!='' and goods_manufacturer_intro!=null">
-				goods_manufacturer_intro=#{goods_status},
+				goods_manufacturer_intro=#{goods_manufacturer_intro},
 			</if>
 			<if test=" goods_manufactured_date!='' and goods_manufactured_date!=null">
+				goods_manufactured_date=#{goods_manufactured_date},
+			</if>
+			<if test=" goods_delivery_date!='' and goods_delivery_date!=null">
 				goods_delivery_date=#{goods_delivery_date},
 			</if>
 	     </set>
