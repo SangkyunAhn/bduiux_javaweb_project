@@ -5,6 +5,7 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %> 
 <%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions" %>
+<c:set var="contextPath"  value="${pageContext.request.contextPath}"  />
 
 <html>
 <head>
@@ -21,7 +22,10 @@ function search_member(search_period){
 	var formObj=document.createElement("form");
 	var i_beginDate = document.createElement("input"); 
 	var i_endDate = document.createElement("input");
+	var i_fixedSearch_period = document.createElement("input");
 
+    i_fixedSearch_period.name="fixedSearchPeriod";
+    i_fixedSearch_period.value=search_period;
 	i_beginDate.name="beginDate";
 	i_beginDate.value=beginDate;
 	i_endDate.name="endDate";
@@ -31,65 +35,89 @@ function search_member(search_period){
     formObj.appendChild(i_endDate);
     document.body.appendChild(formObj); 
     formObj.method="get";
-    formObj.action="${pageContext.request.contextPath}/admin/member/adminMemberMain.do";
+    formObj.action="${contextPath}/admin/member/adminMemberMain.do";
     formObj.submit();
 }
 
 
 function  calcPeriod(search_period){
+    // 선택한 날짜를 받기 위해 다음 4줄을 추가한다.
+    var frm_delivery_list=document.frm_delivery_list;
+    curYear = frm_delivery_list.curYear.value;
+    curMonth = frm_delivery_list.curMonth.value;
+    curDay = frm_delivery_list.curDay.value;
+
 	var dt = new Date();
 	var beginYear,endYear;
 	var beginMonth,endMonth;
 	var beginDay,endDay;
 	var beginDate,endDate;
 	
-	endYear = dt.getFullYear();
-	endMonth = dt.getMonth()+1;
-	endDay = dt.getDate();
+	// endYear = dt.getFullYear();
+	// endMonth = dt.getMonth()+1;
+	// endDay = dt.getDate();
+	endYear = parseInt(curYear);
+    endMonth = parseInt(curMonth);
+    endDay = parseInt(curDay);
+
 	if(search_period=='today'){
 		beginYear=endYear;
 		beginMonth=endMonth;
 		beginDay=endDay;
 	}else if(search_period=='one_week'){
-		beginYear=dt.getFullYear();
+		// beginYear=dt.getFullYear();
+		beginYear = parseInt(curYear);
 		if(endDay-7<1){
-			beginMonth=dt.getMonth();	
+			//beginMonth=dt.getMonth();
+			beginMonth=parseInt(curMonth) - 1;
 		}else{
-			beginMonth=dt.getMonth()+1;
+			//beginMonth=dt.getMonth()+1;
+			beginMonth=parseInt(curMonth);
 		}
 		
 		dt.setDate(endDay-7);
 		beginDay=dt.getDate();
 		
 	}else if(search_period=='two_week'){
-		beginYear = dt.getFullYear();
+		// beginYear = dt.getFullYear();
+		beginYear = parseInt(curYear);
 		if(endDay-14<1){
-			beginMonth=dt.getMonth();	
+			// beginMonth=dt.getMonth();
+			beginMonth=parseInt(curMonth) - 1;
 		}else{
-			beginMonth=dt.getMonth()+1;
+			// beginMonth=dt.getMonth()+1;
+			beginMonth=parseInt(curMonth);
 		}
 		dt.setDate(endDay-14);
 		beginDay=dt.getDate();
 	}else if(search_period=='one_month'){
-		beginYear = dt.getFullYear();
+		// beginYear = dt.getFullYear();
+		beginYear = parseInt(curYear);
 		dt.setMonth(endMonth-1);
 		beginMonth = dt.getMonth();
-		beginDay = dt.getDate();
+		// beginDay = dt.getDate();
+		beginDay = parseInt(curDay);
 	}else if(search_period=='two_month'){
-		beginYear = dt.getFullYear();
+		//beginYear = dt.getFullYear();
+		beginYear = parseInt(curYear);
 		dt.setMonth(endMonth-2);
 		beginMonth = dt.getMonth();
-		beginDay = dt.getDate();
+		// beginDay = dt.getDate();
+		beginDay = parseInt(curDay);
 	}else if(search_period=='three_month'){
-		beginYear = dt.getFullYear();
+		//beginYear = dt.getFullYear();
+		beginYear = parseInt(curYear);
 		dt.setMonth(endMonth-3);
 		beginMonth = dt.getMonth();
-		beginDay = dt.getDate();
+		// beginDay = dt.getDate();
+		beginDay = parseInt(curDay);
 	}else if(search_period=='four_month'){
-		beginYear = dt.getFullYear();
+		//beginYear = dt.getFullYear();
+		beginYear = parseInt(curYear);
 		dt.setMonth(endMonth-4);
 		beginMonth = dt.getMonth();
-		beginDay = dt.getDate();
+		// beginDay = dt.getDate();
+		beginDay = parseInt(curDay);
 	}
 	
 	if(beginMonth <10){
@@ -126,7 +154,7 @@ function fn_member_detail(order_id){
     formObj.appendChild(i_order_id);
     document.body.appendChild(formObj); 
     formObj.method="post";
-    formObj.action="${pageContext.request.contextPath}/admin/member/memberDetail.do";
+    formObj.action="${contextPath}/admin/member/memberDetail.do";
     formObj.submit();
 	
 }
@@ -211,7 +239,7 @@ function fn_detail_search(){
     formObj.appendChild(i_search_word);
     document.body.appendChild(formObj); 
     formObj.method="post";
-    formObj.action="${pageContext.request.contextPath}/admin/member/memberDetail.do";
+    formObj.action="${contextPath}/admin/member/memberDetail.do";
     formObj.submit();
 	
 }
@@ -267,25 +295,25 @@ function fn_detail_search(){
 					    </c:forEach>	
 					</select>일  &nbsp;이전&nbsp;&nbsp;&nbsp;&nbsp; 
 					<a href="javascript:search_member('today')">
-					   <img   src="${pageContext.request.contextPath}/resources/image/btn_search_one_day.jpg">
+					   <img   src="${contextPath}/resources/image/btn_search_one_day.jpg">
 					</a>
 					<a href="javascript:search_member('one_week')">
-					   <img   src="${pageContext.request.contextPath}/resources/image/btn_search_1_week.jpg">
+					   <img   src="${contextPath}/resources/image/btn_search_1_week.jpg">
 					</a>
 					<a href="javascript:search_member('two_week')">
-					   <img   src="${pageContext.request.contextPath}/resources/image/btn_search_2_week.jpg">
+					   <img   src="${contextPath}/resources/image/btn_search_2_week.jpg">
 					</a>
 					<a href="javascript:search_member('one_month')">
-					   <img   src="${pageContext.request.contextPath}/resources/image/btn_search_1_month.jpg">
+					   <img   src="${contextPath}/resources/image/btn_search_1_month.jpg">
 					</a>
 					<a href="javascript:search_member('two_month')">
-					   <img   src="${pageContext.request.contextPath}/resources/image/btn_search_2_month.jpg">
+					   <img   src="${contextPath}/resources/image/btn_search_2_month.jpg">
 					</a>
 					<a href="javascript:search_member('three_month')">
-					   <img   src="${pageContext.request.contextPath}/resources/image/btn_search_3_month.jpg">
+					   <img   src="${contextPath}/resources/image/btn_search_3_month.jpg">
 					</a>
 					<a href="javascript:search_member('four_month')">
-					   <img   src="${pageContext.request.contextPath}/resources/image/btn_search_4_month.jpg">
+					   <img   src="${contextPath}/resources/image/btn_search_4_month.jpg">
 					</a>
 					&nbsp;까지 조회
 					</td>
@@ -440,7 +468,7 @@ function fn_detail_search(){
 	            <tr >       
 					<td width=10%>
 					
-					  <a href="${pageContext.request.contextPath}/admin/member/memberDetail.do?member_id=${item.member_id}">
+					  <a href="${contextPath}/admin/member/memberDetail.do?member_id=${item.member_id}">
 					     <strong>${item.member_id}</strong>
 					  </a>
 					</td>
@@ -478,11 +506,11 @@ function fn_detail_search(){
              <td colspan=8 class="fixed">
                  <c:forEach   var="page" begin="1" end="10" step="1" >
 		         <c:if test="${chapter >1 && page==1 }">
-		          <a href="${pageContext.request.contextPath}/admin/member/adminMemberMain.do?chapter=${chapter-1}&pageNum=${(chapter-1)*10 +1 }">&nbsp;pre &nbsp;</a>
+		          <a href="${contextPath}/admin/member/adminMemberMain.do?chapter=${chapter-1}&pageNum=${(chapter-1)*10 +1 }">&nbsp;pre &nbsp;</a>
 		         </c:if>
-		          <a href="${pageContext.request.contextPath}/admin/member/adminMemberMain.do?chapter=${chapter}&pageNum=${page}">${(chapter-1)*10 +page } </a>
+		          <a href="${contextPath}/admin/member/adminMemberMain.do?chapter=${chapter}&pageNum=${page}">${(chapter-1)*10 +page } </a>
 		         <c:if test="${page ==10 }">
-		          <a href="${pageContext.request.contextPath}/admin/member/adminMemberMain.do?chapter=${chapter+1}&pageNum=${chapter*10+1}">&nbsp; next</a>
+		          <a href="${contextPath}/admin/member/adminMemberMain.do?chapter=${chapter+1}&pageNum=${chapter*10+1}">&nbsp; next</a>
 		         </c:if> 
 	      		</c:forEach> 
            </td>
@@ -496,11 +524,11 @@ function fn_detail_search(){
    <DIV id="page_wrap">
 		 <c:forEach   var="page" begin="1" end="10" step="1" >
 		         <c:if test="${chapter >1 && page==1 }">
-		          <a href="${pageContext.request.contextPath}/admin/member/adminMemberMain.do?chapter=${chapter-1}&pageNum=${(chapter-1)*10 +1 }">&nbsp;pre &nbsp;</a>
+		          <a href="${contextPath}/admin/member/adminMemberMain.do?chapter=${chapter-1}&pageNum=${(chapter-1)*10 +1 }">&nbsp;pre &nbsp;</a>
 		         </c:if>
-		          <a href="${pageContext.request.contextPath}/admin/member/adminMemberMain.do?chapter=${chapter}&pageNum=${page}">${(chapter-1)*10 +page } </a>
+		          <a href="${contextPath}/admin/member/adminMemberMain.do?chapter=${chapter}&pageNum=${page}">${(chapter-1)*10 +page } </a>
 		         <c:if test="${page ==10 }">
-		          <a href="${pageContext.request.contextPath}/admin/member/adminMemberMain.do?chapter=${chapter+1}&pageNum=${chapter*10+1}">&nbsp; next</a>
+		          <a href="${contextPath}/admin/member/adminMemberMain.do?chapter=${chapter+1}&pageNum=${chapter*10+1}">&nbsp; next</a>
 		         </c:if> 
 	      </c:forEach> 
 	</DIV>	

@@ -35,7 +35,7 @@
 		<result property="del_yn" column="del_yn" />
 	</resultMap>
 <select id="listMember" resultMap="memberResult" parameterType="java.util.HashMap"  >
-		  select * from (
+		select * from (
 			    select rowNum as recNum,t.*
 			       from (
 			              select  *  from t_shopping_member
@@ -53,7 +53,7 @@
 					    ) t
 				)							
 			where				
-		recNum between (#{chapter}-1)*100+ (#{pageNum}-1)*10+1 and (#{chapter}-1)*100+(#{pageNum})*10				        
+		recNum between (#{chapter}-1)*100+ (#{pageNum}-1)*10+1 and (#{chapter}-1)*100+(#{pageNum})*10
 	</select>
 	
     <select id="memberDetail" resultMap="memberResult"   parameterType="String"  >

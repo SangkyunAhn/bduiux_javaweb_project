@@ -25,30 +25,30 @@ import com.bookshop01.member.vo.MemberVO;
 public class AdminMemberControllerImpl extends BaseController  implements AdminMemberController{
 	@Autowired
 	AdminMemberService adminMemberService;
-	
+
 	@RequestMapping(value="/adminMemberMain.do" ,method={RequestMethod.POST,RequestMethod.GET})
 	public ModelAndView adminMemberMain(@RequestParam Map<String, String> dateMap,
-			                           HttpServletRequest request, HttpServletResponse response)  throws Exception{
+									   HttpServletRequest request, HttpServletResponse response)  throws Exception{
 		String viewName=(String)request.getAttribute("viewName");
 		ModelAndView mav = new ModelAndView(viewName);
 
 		String fixedSearchPeriod = dateMap.get("fixedSearchPeriod");
-		String chapter = dateMap.get("chapter");
+		String section = dateMap.get("section");
 		String pageNum = dateMap.get("pageNum");
 		String beginDate=null,endDate=null;
-		
+
 		String [] tempDate=calcSearchPeriod(fixedSearchPeriod).split(",");
 		beginDate=tempDate[0];
 		endDate=tempDate[1];
 		dateMap.put("beginDate", beginDate);
 		dateMap.put("endDate", endDate);
-		
-		
+
+
 		HashMap<String,Object> condMap=new HashMap<String,Object>();
-		if(chapter== null) {
-			chapter = "1";
+		if(section== null) {
+			section = "1";
 		}
-		condMap.put("chapter",chapter);
+		condMap.put("section",section);
 		if(pageNum== null) {
 			pageNum = "1";
 		}
@@ -57,7 +57,7 @@ public class AdminMemberControllerImpl extends BaseController  implements AdminM
 		condMap.put("endDate", endDate);
 		ArrayList<MemberVO> member_list=adminMemberService.listMember(condMap);
 		mav.addObject("member_list", member_list);
-		
+
 		String beginDate1[]=beginDate.split("-");
 		String endDate2[]=endDate.split("-");
 		mav.addObject("beginYear",beginDate1[0]);
@@ -66,11 +66,11 @@ public class AdminMemberControllerImpl extends BaseController  implements AdminM
 		mav.addObject("endYear",endDate2[0]);
 		mav.addObject("endMonth",endDate2[1]);
 		mav.addObject("endDay",endDate2[2]);
-		
-		mav.addObject("chapter", chapter);
+
+		mav.addObject("section", section);
 		mav.addObject("pageNum", pageNum);
 		return mav;
-		
+
 	}
 	@RequestMapping(value="/memberDetail.do" ,method={RequestMethod.POST,RequestMethod.GET})
 	public ModelAndView memberDetail(HttpServletRequest request, HttpServletResponse response)  throws Exception{
@@ -81,7 +81,7 @@ public class AdminMemberControllerImpl extends BaseController  implements AdminM
 		mav.addObject("member_info",member_info);
 		return mav;
 	}
-	
+
 	@RequestMapping(value="/modifyMemberInfo.do" ,method={RequestMethod.POST,RequestMethod.GET})
 	public void modifyMemberInfo(HttpServletRequest request, HttpServletResponse response)  throws Exception{
 		HashMap<String,String> memberMap=new HashMap<String,String>();
@@ -101,7 +101,7 @@ public class AdminMemberControllerImpl extends BaseController  implements AdminM
 			memberMap.put("tel1",val[0]);
 			memberMap.put("tel2",val[1]);
 			memberMap.put("tel3",val[2]);
-			
+
 		}else if(mod_type.equals("hp")){
 			val=value.split(",");
 			memberMap.put("hp1",val[0]);
@@ -120,15 +120,15 @@ public class AdminMemberControllerImpl extends BaseController  implements AdminM
 			memberMap.put("jibunAddress", val[2]);
 			memberMap.put("namujiAddress", val[3]);
 		}
-		
+
 		memberMap.put("member_id", member_id);
-		
+
 		adminMemberService.modifyMemberInfo(memberMap);
 		pw.print("mod_success");
-		pw.close();		
-		
+		pw.close();
+
 	}
-	
+
 	@RequestMapping(value="/deleteMember.do" ,method={RequestMethod.POST})
 	public ModelAndView deleteMember(HttpServletRequest request, HttpServletResponse response)  throws Exception {
 		ModelAndView mav = new ModelAndView();
@@ -137,11 +137,11 @@ public class AdminMemberControllerImpl extends BaseController  implements AdminM
 		String del_yn=request.getParameter("del_yn");
 		memberMap.put("del_yn", del_yn);
 		memberMap.put("member_id", member_id);
-		
+
 		adminMemberService.modifyMemberInfo(memberMap);
 		mav.setViewName("redirect:/admin/member/adminMemberMain.do");
 		return mav;
-		
+
 	}
-		
+
 }
