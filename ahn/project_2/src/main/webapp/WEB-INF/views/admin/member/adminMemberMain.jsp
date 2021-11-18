@@ -6,6 +6,8 @@
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %> 
 <%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions" %>
 <c:set var="contextPath"  value="${pageContext.request.contextPath}"  />
+<c:set var="beginDate" value="${beginYear}-${beginMonth}-${beginDay}" />
+<c:set var="endDate" value="${endYear}-${endMonth}-${endDay}" />
 
 <html>
 <head>
@@ -22,10 +24,7 @@ function search_member(search_period){
 	var formObj=document.createElement("form");
 	var i_beginDate = document.createElement("input"); 
 	var i_endDate = document.createElement("input");
-	var i_fixedSearch_period = document.createElement("input");
 
-    i_fixedSearch_period.name="fixedSearchPeriod";
-    i_fixedSearch_period.value=search_period;
 	i_beginDate.name="beginDate";
 	i_beginDate.value=beginDate;
 	i_endDate.name="endDate";
@@ -293,7 +292,7 @@ function fn_detail_search(){
 					        </c:otherwise>
 					      </c:choose>
 					    </c:forEach>	
-					</select>일  &nbsp;이전&nbsp;&nbsp;&nbsp;&nbsp; 
+					</select>일  &nbsp;이전&nbsp;&nbsp;&nbsp;&nbsp;
 					<a href="javascript:search_member('today')">
 					   <img   src="${contextPath}/resources/image/btn_search_one_day.jpg">
 					</a>
@@ -506,11 +505,11 @@ function fn_detail_search(){
              <td colspan=8 class="fixed">
                  <c:forEach   var="page" begin="1" end="10" step="1" >
 		         <c:if test="${chapter >1 && page==1 }">
-		          <a href="${contextPath}/admin/member/adminMemberMain.do?chapter=${chapter-1}&pageNum=${(chapter-1)*10 +1 }">&nbsp;pre &nbsp;</a>
+		          <a href="${contextPath}/admin/member/adminMemberMain.do?beginDate=${beginDate}&endDate=${endDate}&chapter=${chapter-1}&pageNum=${(chapter-1)*10 +1 }">&nbsp;pre &nbsp;</a>
 		         </c:if>
-		          <a href="${contextPath}/admin/member/adminMemberMain.do?chapter=${chapter}&pageNum=${page}">${(chapter-1)*10 +page } </a>
+		          <a href="${contextPath}/admin/member/adminMemberMain.do?beginDate=${beginDate}&endDate=${endDate}&chapter=${chapter}&pageNum=${page}">${(chapter-1)*10 +page } </a>
 		         <c:if test="${page ==10 }">
-		          <a href="${contextPath}/admin/member/adminMemberMain.do?chapter=${chapter+1}&pageNum=${chapter*10+1}">&nbsp; next</a>
+		          <a href="${contextPath}/admin/member/adminMemberMain.do?beginDate=${beginDate}&endDate=${endDate}&chapter=${chapter+1}&pageNum=${chapter*10+1}">&nbsp; next</a>
 		         </c:if> 
 	      		</c:forEach> 
            </td>
@@ -524,11 +523,11 @@ function fn_detail_search(){
    <DIV id="page_wrap">
 		 <c:forEach   var="page" begin="1" end="10" step="1" >
 		         <c:if test="${chapter >1 && page==1 }">
-		          <a href="${contextPath}/admin/member/adminMemberMain.do?chapter=${chapter-1}&pageNum=${(chapter-1)*10 +1 }">&nbsp;pre &nbsp;</a>
+		          <a href="${contextPath}/admin/member/adminMemberMain.do?beginDate=${beginDate}&endDate=${endDate}&chapter=${chapter-1}&pageNum=${(chapter-1)*10 +1 }">&nbsp;pre &nbsp;</a>
 		         </c:if>
-		          <a href="${contextPath}/admin/member/adminMemberMain.do?chapter=${chapter}&pageNum=${page}">${(chapter-1)*10 +page } </a>
+		          <a href="${contextPath}/admin/member/adminMemberMain.do?beginDate=${beginDate}&endDate=${endDate}&chapter=${chapter}&pageNum=${page}">${(chapter-1)*10 +page } </a>
 		         <c:if test="${page ==10 }">
-		          <a href="${contextPath}/admin/member/adminMemberMain.do?chapter=${chapter+1}&pageNum=${chapter*10+1}">&nbsp; next</a>
+		          <a href="${contextPath}/admin/member/adminMemberMain.do?beginDate=${beginDate}&endDate=${endDate}&chapter=${chapter+1}&pageNum=${chapter*10+1}">&nbsp; next</a>
 		         </c:if> 
 	      </c:forEach> 
 	</DIV>	
