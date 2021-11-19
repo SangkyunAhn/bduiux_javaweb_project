@@ -220,7 +220,7 @@ function fn_detail_search(){
     formObj.appendChild(i_search_type);
     formObj.appendChild(i_search_word);
     document.body.appendChild(formObj); 
-    formObj.method="get";
+    formObj.method="post";
     formObj.action="${contextPath}/admin/member/adminMemberMain.do";
     formObj.submit();
 	

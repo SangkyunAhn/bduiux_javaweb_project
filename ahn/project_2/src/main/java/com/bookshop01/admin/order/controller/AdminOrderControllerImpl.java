@@ -53,6 +53,8 @@ public class AdminOrderControllerImpl extends BaseController  implements AdminOr
 		String pageNum = dateMap.get("pageNum");
 		String beginDate = dateMap.get("beginDate");
 		String endDate = dateMap.get("endDate");
+		String search_type = dateMap.get("search_type");
+		String search_word = dateMap.get("search_word");
 
 		if (beginDate == null && endDate == null) {
 			String[] tempDate = calcSearchPeriod(fixedSearchPeriod).split(",");
@@ -74,6 +76,8 @@ public class AdminOrderControllerImpl extends BaseController  implements AdminOr
 		condMap.put("pageNum",pageNum);
 		condMap.put("beginDate",beginDate);
 		condMap.put("endDate", endDate);
+		condMap.put("search_type", search_type);
+		condMap.put("search_word", search_word);
 		List<OrderVO> newOrderList=adminOrderService.listNewOrder(condMap);
 		mav.addObject("newOrderList",newOrderList);
 		
