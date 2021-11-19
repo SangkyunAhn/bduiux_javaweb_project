@@ -139,6 +139,17 @@
 			             		 goods_manufactured_date
 			              from t_shopping_goods 
 			                where  to_char(goods_creDate,'YYYY-MM-DD')  between #{beginDate} and #{endDate}
+			                ]]>
+			                <if test="search_type=='goods_id'">
+			                  AND goods_id=#{search_word}
+			                </if>
+			                <if test="search_type=='goods_title'">
+			                  AND goods_title=#{search_word}
+			                </if>
+			                <if test="search_type=='goods_manufacturer'">
+			                   AND goods_manufacturer=#{search_word}
+			                </if>
+		<![CDATA[
 			               order by goods_creDate desc
 					    )
 				)							
@@ -160,7 +171,7 @@
 			                  AND orderer_name=#{search_word}
 			                </if>
 			                <if test="search_type=='orderer_hp_num'">
-			                   AND pay_orderer_hp_num=#{search_word} 
+			                   AND pay_orderer_hp_num=#{search_word}
 			                </if>
 			              order by PAY_ORDER_TIME desc
 					    ) t
