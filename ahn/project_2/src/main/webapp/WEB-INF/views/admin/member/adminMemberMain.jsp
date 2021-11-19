@@ -1,7 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=utf-8"
 	pageEncoding="utf-8"
 	isELIgnored="false" %>
-<%@ taglib uri="http://tiles.apache.org/tags-tiles" prefix="tiles" %>    
+<%@ taglib uri="http://tiles.apache.org/tags-tiles" prefix="tiles" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %> 
 <%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions" %>
@@ -41,20 +41,17 @@ function search_member(search_period){
 
 function  calcPeriod(search_period){
     // 선택한 날짜를 받기 위해 다음 4줄을 추가한다.
-    var frm_delivery_list=document.frm_delivery_list;
-    curYear = frm_delivery_list.curYear.value;
-    curMonth = frm_delivery_list.curMonth.value;
-    curDay = frm_delivery_list.curDay.value;
+    var frm_delivery_list = document.frm_delivery_list;
+    var curYear = frm_delivery_list.curYear.value;
+    var curMonth = frm_delivery_list.curMonth.value;
+    var curDay = frm_delivery_list.curDay.value;
 
 	var dt = new Date();
 	var beginYear,endYear;
 	var beginMonth,endMonth;
 	var beginDay,endDay;
 	var beginDate,endDate;
-	
-	// endYear = dt.getFullYear();
-	// endMonth = dt.getMonth()+1;
-	// endDay = dt.getDate();
+
 	endYear = parseInt(curYear);
     endMonth = parseInt(curMonth);
     endDay = parseInt(curDay);
@@ -64,13 +61,10 @@ function  calcPeriod(search_period){
 		beginMonth=endMonth;
 		beginDay=endDay;
 	}else if(search_period=='one_week'){
-		// beginYear=dt.getFullYear();
 		beginYear = parseInt(curYear);
 		if(endDay-7<1){
-			//beginMonth=dt.getMonth();
 			beginMonth=parseInt(curMonth) - 1;
 		}else{
-			//beginMonth=dt.getMonth()+1;
 			beginMonth=parseInt(curMonth);
 		}
 		
@@ -78,59 +72,48 @@ function  calcPeriod(search_period){
 		beginDay=dt.getDate();
 		
 	}else if(search_period=='two_week'){
-		// beginYear = dt.getFullYear();
 		beginYear = parseInt(curYear);
 		if(endDay-14<1){
-			// beginMonth=dt.getMonth();
 			beginMonth=parseInt(curMonth) - 1;
 		}else{
-			// beginMonth=dt.getMonth()+1;
 			beginMonth=parseInt(curMonth);
 		}
 		dt.setDate(endDay-14);
 		beginDay=dt.getDate();
 	}else if(search_period=='one_month'){
-		// beginYear = dt.getFullYear();
 		beginYear = parseInt(curYear);
 		dt.setMonth(endMonth-1);
 		beginMonth = dt.getMonth();
-		// beginDay = dt.getDate();
 		beginDay = parseInt(curDay);
 	}else if(search_period=='two_month'){
-		//beginYear = dt.getFullYear();
 		beginYear = parseInt(curYear);
 		dt.setMonth(endMonth-2);
 		beginMonth = dt.getMonth();
-		// beginDay = dt.getDate();
 		beginDay = parseInt(curDay);
 	}else if(search_period=='three_month'){
-		//beginYear = dt.getFullYear();
 		beginYear = parseInt(curYear);
 		dt.setMonth(endMonth-3);
 		beginMonth = dt.getMonth();
-		// beginDay = dt.getDate();
 		beginDay = parseInt(curDay);
 	}else if(search_period=='four_month'){
-		//beginYear = dt.getFullYear();
 		beginYear = parseInt(curYear);
 		dt.setMonth(endMonth-4);
 		beginMonth = dt.getMonth();
-		// beginDay = dt.getDate();
 		beginDay = parseInt(curDay);
 	}
 	
 	if(beginMonth <10){
-		beginMonth='0'+beginMonth;
-		if(beginDay<10){
-			beginDay='0'+beginDay;
-		}
+		beginMonth='0' + beginMonth;
 	}
+	if(beginDay<10){
+    	beginDay='0' + beginDay;
+    }
 	if(endMonth <10){
 		endMonth='0'+endMonth;
-		if(endDay<10){
-			endDay='0'+endDay;
-		}
 	}
+	if(endDay<10){
+    	endDay='0'+endDay;
+    }
 	endDate=endYear+'-'+endMonth +'-'+endDay;
 	beginDate=beginYear+'-'+beginMonth +'-'+beginDay;
 	//alert(beginDate+","+endDate);

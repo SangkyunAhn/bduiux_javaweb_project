@@ -3,6 +3,8 @@
 	isELIgnored="false" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <c:set var="contextPath"  value="${pageContext.request.contextPath}"  />
+<c:set var="beginDate" value="${beginYear}-${beginMonth}-${beginDay}" />
+<c:set var="endDate" value="${endYear}-${endMonth}-${endDay}" />
 <html>
 <head>
 <meta  charset="utf-8">
@@ -60,64 +62,80 @@ function search_order_history(search_period){
 
 
 function  calcPeriod(search_period){
+    // 선택한 날짜를 받기 위해 다음 4줄을 추가한다.
+    var frm_delivery_list = document.frm_delivery_list;
+    var curYear = frm_delivery_list.curYear.value;
+    var curMonth = frm_delivery_list.curMonth.value;
+    var curDay = frm_delivery_list.curDay.value;
+
 	var dt = new Date();
 	var beginYear,endYear;
 	var beginMonth,endMonth;
 	var beginDay,endDay;
 	var beginDate,endDate;
-	
-	endYear = dt.getFullYear();
-	endMonth = dt.getMonth()+1;
-	endDay = dt.getDate();
+
+	endYear = parseInt(curYear);
+    endMonth = parseInt(curMonth);
+    endDay = parseInt(curDay);
+
 	if(search_period=='today'){
 		beginYear=endYear;
 		beginMonth=endMonth;
 		beginDay=endDay;
 	}else if(search_period=='one_week'){
-		beginYear=dt.getFullYear();
-		beginMonth=dt.getMonth()+1;
+		beginYear = parseInt(curYear);
+		if(endDay-7<1){
+			beginMonth=parseInt(curMonth) - 1;
+		}else{
+			beginMonth=parseInt(curMonth);
+		}
+
 		dt.setDate(endDay-7);
 		beginDay=dt.getDate();
-		
+
 	}else if(search_period=='two_week'){
-		beginYear = dt.getFullYear();
-		beginMonth = dt.getMonth()+1;
+		beginYear = parseInt(curYear);
+		if(endDay-14<1){
+			beginMonth=parseInt(curMonth) - 1;
+		}else{
+			beginMonth=parseInt(curMonth);
+		}
 		dt.setDate(endDay-14);
 		beginDay=dt.getDate();
 	}else if(search_period=='one_month'){
-		beginYear = dt.getFullYear();
+		beginYear = parseInt(curYear);
 		dt.setMonth(endMonth-1);
 		beginMonth = dt.getMonth();
-		beginDay = dt.getDate();
+		beginDay = parseInt(curDay);
 	}else if(search_period=='two_month'){
-		beginYear = dt.getFullYear();
+		beginYear = parseInt(curYear);
 		dt.setMonth(endMonth-2);
 		beginMonth = dt.getMonth();
-		beginDay = dt.getDate();
+		beginDay = parseInt(curDay);
 	}else if(search_period=='three_month'){
-		beginYear = dt.getFullYear();
+		beginYear = parseInt(curYear);
 		dt.setMonth(endMonth-3);
 		beginMonth = dt.getMonth();
-		beginDay = dt.getDate();
+		beginDay = parseInt(curDay);
 	}else if(search_period=='four_month'){
-		beginYear = dt.getFullYear();
+		beginYear = parseInt(curYear);
 		dt.setMonth(endMonth-4);
 		beginMonth = dt.getMonth();
-		beginDay = dt.getDate();
+		beginDay = parseInt(curDay);
 	}
-	
+
 	if(beginMonth <10){
-		beginMonth='0'+beginMonth;
-		if(beginDay<10){
-			beginDay='0'+beginDay;
-		}
+		beginMonth='0' + beginMonth;
 	}
+	if(beginDay<10){
+    	beginDay='0' + beginDay;
+    }
 	if(endMonth <10){
 		endMonth='0'+endMonth;
-		if(endDay<10){
-			endDay='0'+endDay;
-		}
 	}
+	if(endDay<10){
+    	endDay='0'+endDay;
+    }
 	endDate=endYear+'-'+endMonth +'-'+endDay;
 	beginDate=beginYear+'-'+beginMonth +'-'+beginDay;
 	//alert(beginDate+","+endDate);
@@ -575,11 +593,11 @@ function fn_detail_search(){
              <td colspan=8 class="fixed">
                  <c:forEach   var="page" begin="1" end="10" step="1" >
 		         <c:if test="${section >1 && page==1 }">
-		          <a href="${contextPath}/admin/order/adminOrderMain.do?chapter=${section-1}&pageNum=${(section-1)*10 +1 }">&nbsp;&nbsp;</a>
+		          <a href="${contextPath}/admin/order/adminOrderMain.do?beginDate=${beginDate}&endDate=${endDate}&section=${section-1}&pageNum=${(section-1)*10 +1 }">&nbsp;&nbsp;</a>
 		         </c:if>
-		          <a href="${contextPath}/admin/order/adminOrderMain.do?chapter=${section}&pageNum=${page}">${(section-1)*10 +page } </a>
+		          <a href="${contextPath}/admin/order/adminOrderMain.do?beginDate=${beginDate}&endDate=${endDate}&section=${section}&pageNum=${page}">${(section-1)*10 +page } </a>
 		         <c:if test="${page ==10 }">
-		          <a href="${contextPath}/admin/order/adminOrderMain.do?chapter=${section+1}&pageNum=${section*10+1}">&nbsp; next</a>
+		          <a href="${contextPath}/admin/order/adminOrderMain.do?beginDate=${beginDate}&endDate=${endDate}&section=${section+1}&pageNum=${section*10+1}">&nbsp; next</a>
 		         </c:if> 
 	      		</c:forEach> 
            </td>

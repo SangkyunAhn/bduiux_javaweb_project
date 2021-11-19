@@ -1,19 +1,37 @@
 <%@ page language="java" contentType="text/html; charset=utf-8"
 	pageEncoding="utf-8"
 	isELIgnored="false" %>
+<%@ taglib uri="http://tiles.apache.org/tags-tiles" prefix="tiles" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
 <%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions" %>
 <c:set var="contextPath"  value="${pageContext.request.contextPath}"  />
+<c:set var="beginDate" value="${beginYear}-${beginMonth}-${beginDay}" />
+<c:set var="endDate" value="${endYear}-${endMonth}-${endDay}" />
 <!DOCTYPE html >
 <html>
 <head>
 <meta charset="utf-8">
 <script>
 function search_goods_list(fixedSearchPeriod){
+    temp=calcPeriod(fixedSearchPeriod);
+    var date=temp.split(",");
+    beginDate=date[0];
+    endDate=date[1];
+
 	var formObj=document.createElement("form");
+	var i_beginDate = document.createElement("input");
+    var i_endDate = document.createElement("input");
 	var i_fixedSearch_period = document.createElement("input");
+
+	i_beginDate.name="beginDate";
+    i_beginDate.value=beginDate;
+    i_endDate.name="endDate";
+    i_endDate.value=endDate;
 	i_fixedSearch_period.name="fixedSearchPeriod";
 	i_fixedSearch_period.value=fixedSearchPeriod;
+    formObj.appendChild(i_beginDate);
+    formObj.appendChild(i_endDate);
     formObj.appendChild(i_fixedSearch_period);
     document.body.appendChild(formObj); 
     formObj.method="get";
@@ -23,64 +41,80 @@ function search_goods_list(fixedSearchPeriod){
 
 
 function  calcPeriod(search_period){
+    // 선택한 날짜를 받기 위해 다음 4줄을 추가한다.
+    var frm_goods_list = document.frm_goods_list;
+    var curYear = frm_goods_list.curYear.value;
+    var curMonth = frm_goods_list.curMonth.value;
+    var curDay = frm_goods_list.curDay.value;
+
 	var dt = new Date();
 	var beginYear,endYear;
 	var beginMonth,endMonth;
 	var beginDay,endDay;
 	var beginDate,endDate;
-	
-	endYear = dt.getFullYear();
-	endMonth = dt.getMonth()+1;
-	endDay = dt.getDate();
+
+	endYear = parseInt(curYear);
+    endMonth = parseInt(curMonth);
+    endDay = parseInt(curDay);
+
 	if(search_period=='today'){
 		beginYear=endYear;
 		beginMonth=endMonth;
 		beginDay=endDay;
 	}else if(search_period=='one_week'){
-		beginYear=dt.getFullYear();
-		beginMonth=dt.getMonth()+1;
+		beginYear = parseInt(curYear);
+		if(endDay-7<1){
+			beginMonth=parseInt(curMonth) - 1;
+		}else{
+			beginMonth=parseInt(curMonth);
+		}
+
 		dt.setDate(endDay-7);
 		beginDay=dt.getDate();
-		
+
 	}else if(search_period=='two_week'){
-		beginYear = dt.getFullYear();
-		beginMonth = dt.getMonth()+1;
+		beginYear = parseInt(curYear);
+		if(endDay-14<1){
+			beginMonth=parseInt(curMonth) - 1;
+		}else{
+			beginMonth=parseInt(curMonth);
+		}
 		dt.setDate(endDay-14);
 		beginDay=dt.getDate();
 	}else if(search_period=='one_month'){
-		beginYear = dt.getFullYear();
+		beginYear = parseInt(curYear);
 		dt.setMonth(endMonth-1);
 		beginMonth = dt.getMonth();
-		beginDay = dt.getDate();
+		beginDay = parseInt(curDay);
 	}else if(search_period=='two_month'){
-		beginYear = dt.getFullYear();
+		beginYear = parseInt(curYear);
 		dt.setMonth(endMonth-2);
 		beginMonth = dt.getMonth();
-		beginDay = dt.getDate();
+		beginDay = parseInt(curDay);
 	}else if(search_period=='three_month'){
-		beginYear = dt.getFullYear();
+		beginYear = parseInt(curYear);
 		dt.setMonth(endMonth-3);
 		beginMonth = dt.getMonth();
-		beginDay = dt.getDate();
+		beginDay = parseInt(curDay);
 	}else if(search_period=='four_month'){
-		beginYear = dt.getFullYear();
+		beginYear = parseInt(curYear);
 		dt.setMonth(endMonth-4);
 		beginMonth = dt.getMonth();
-		beginDay = dt.getDate();
+		beginDay = parseInt(curDay);
 	}
-	
+
 	if(beginMonth <10){
-		beginMonth='0'+beginMonth;
-		if(beginDay<10){
-			beginDay='0'+beginDay;
-		}
+		beginMonth='0' + beginMonth;
 	}
+	if(beginDay<10){
+    	beginDay='0' + beginDay;
+    }
 	if(endMonth <10){
 		endMonth='0'+endMonth;
-		if(endDay<10){
-			endDay='0'+endDay;
-		}
 	}
+	if(endDay<10){
+    	endDay='0'+endDay;
+    }
 	endDate=endYear+'-'+endMonth +'-'+endDay;
 	beginDate=beginYear+'-'+beginMonth +'-'+beginDay;
 	//alert(beginDate+","+endDate);
@@ -90,7 +124,7 @@ function  calcPeriod(search_period){
 </head>
 <body>
 	<H3>상품 조회</H3>
-	<form  method="post">	
+	<form name="frm_goods_list" method="post">
 		<TABLE cellpadding="10" cellspacing="10"  >
 			<TBODY>
 				<TR >
@@ -147,7 +181,7 @@ function  calcPeriod(search_period){
 					   <img   src="${contextPath}/resources/image/btn_search_2_week.jpg">
 					</a>
 					<a href="javascript:search_goods_list('one_month')">
-					   <img   src="${pageContext.request.contextPath}/resources/image/btn_search_1_month.jpg">
+					   <img   src="${contextPath}/resources/image/btn_search_1_month.jpg">
 					</a>
 					<a href="javascript:search_goods_list('two_month')">
 					   <img   src="${contextPath}/resources/image/btn_search_2_month.jpg">
@@ -243,11 +277,11 @@ function  calcPeriod(search_period){
              <td colspan=8 class="fixed">
                  <c:forEach   var="page" begin="1" end="10" step="1" >
 		         <c:if test="${section >1 && page==1 }">
-		          <a href="${contextPath}/admin/goods/adminGoodsMain.do?chapter=${section-1}&pageNum=${(section-1)*10 +1 }">&nbsp; &nbsp;</a>
+		          <a href="${contextPath}/admin/goods/adminGoodsMain.do?beginDate=${beginDate}&endDate=${endDate}&section=${section-1}&pageNum=${(section-1)*10 +1 }">&nbsp; &nbsp;</a>
 		         </c:if>
-		          <a href="${contextPath}/admin/goods/adminGoodsMain.do?chapter=${section}&pageNum=${page}">${(section-1)*10 +page } </a>
+		          <a href="${contextPath}/admin/goods/adminGoodsMain.do?beginDate=${beginDate}&endDate=${endDate}&section=${section}&pageNum=${page}">${(section-1)*10 +page } </a>
 		         <c:if test="${page ==10 }">
-		          <a href="${contextPath}/admin/goods/adminGoodsMain.do?chapter=${section+1}&pageNum=${section*10+1}">&nbsp; next</a>
+		          <a href="${contextPath}/admin/goods/adminGoodsMain.do?beginDate=${beginDate}&endDate=${endDate}&section=${section+1}&pageNum=${section*10+1}">&nbsp; next</a>
 		         </c:if> 
 	      		</c:forEach> 
      
