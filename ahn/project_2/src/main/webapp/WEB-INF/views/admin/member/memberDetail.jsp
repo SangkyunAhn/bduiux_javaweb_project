@@ -6,6 +6,7 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<c:set var="contextPath"  value="${pageContext.request.contextPath}"  />
 <script src="http://dmaps.daum.net/map_js_init/postcode.v2.js"></script>
 
 <c:choose>
@@ -40,24 +41,6 @@ function init(){
 window.onload=function()
 {
   test();
-}
-
-function test(){
-	init();
-	//alert("회원 정보가 수정되었습니다.");
-//	init();
-}
-function init(){
-	var frm_mod_member=document.frm_mod_member;
-	var h_tel1=frm_mod_member.h_tel1;
-	var h_hp1=frm_mod_member.h_hp1;
-	var tel1=h_tel1.value;
-	var hp1=h_hp1.value;
-	
-	var select_tel1=frm_mod_member.tel1;
-	var select_hp1=frm_mod_member.hp1;
-	select_tel1.value=tel1;
-	select_hp1.value=hp1;
 }
 </script>
 </c:otherwise>
@@ -130,7 +113,7 @@ function fn_modify_member_info(member_id,mod_type){
 					break;
 				} 
 			}
-			//alert("member_gender111:"+value);
+			//alert("member_gender:"+value);
 			
 		}else if(mod_type=='member_birth'){
 			var member_birth_y=frm_mod_member.member_birth_y;
@@ -228,7 +211,7 @@ function fn_modify_member_info(member_id,mod_type){
 		$.ajax({
 			type : "post",
 			async : false, //false인 경우 동기식으로 처리한다.
-			url : "http://localhost:8090/bookshop01/admin/member/modifyMemberInfo.do",
+			url : "${contextPath}/admin/member/modifyMemberInfo.do",
 			data : {
 				member_id:member_id,
 				mod_type:mod_type,
@@ -266,8 +249,13 @@ function fn_delete_member(member_id ,del_yn){
     frm_mod_member.appendChild(i_member_id);
     frm_mod_member.appendChild(i_del_yn);
     frm_mod_member.method="post";
-    frm_mod_member.action="/bookshop01/admin/member/deleteMember.do";
+    frm_mod_member.action="/admin/member/deleteMember.do";
     frm_mod_member.submit();
+}
+
+function fn_display_email2() {
+	var sel = frm_mod_member.select_email2.value;
+    frm_mod_member.email2.value = sel;
 }
 </script>
 </head>
@@ -451,8 +439,8 @@ function fn_delete_member(member_id ,del_yn){
 				<tr class="dot_line">
 					<td class="fixed_join">이메일(e-mail)</td>
 					<td>
-					   <input type="text" name="email1" size=10 value="${member_info.email1 }" /> @ <input type="text" size=10  name="email2" value="${member_info.email2 }" /> 
-					   <select name="select_email2" onChange=""  title="직접입력">
+					   <input type="text" name="email1" size=10 value="${member_info.email1 }" /> @ <input type="text" size=10  name="email2" value="${member_info.email2 }" />
+					   <select name="select_email2" onChange="fn_display_email2()"  title="직접입력">
 							<option value="non">직접입력</option>
 							<option value="hanmail.net">hanmail.net</option>
 							<option value="naver.com">naver.com</option>
@@ -465,7 +453,7 @@ function fn_delete_member(member_id ,del_yn){
 							<option value="empal.com">empal.com</option>
 							<option value="korea.com">korea.com</option>
 							<option value="freechal.com">freechal.com</option>
-					</select><Br><br> 
+					</select><Br><br>
 					<c:choose> 
 					   <c:when test="${member_info.emailsts_yn=='true' }">
 					     <input type="checkbox" name="emailsts_yn"  value="Y" checked /> 쇼핑몰에서 발송하는 e-mail을 수신합니다.

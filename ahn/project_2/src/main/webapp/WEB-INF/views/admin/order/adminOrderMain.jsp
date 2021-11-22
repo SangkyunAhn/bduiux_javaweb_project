@@ -362,13 +362,13 @@ function fn_detail_search(){
 				  <td>
 					조회 기간:
 					<select name="beginYear" disabled>
-					 <c:forEach   var="i" begin="0" end="5">
+					 <c:forEach   var="i" begin="0" end="10">
 					      <c:choose>
 					        <c:when test="${beginYear==beginYear-i }">
-					          <option value="${beginYear-i }" selected>${beginYear-i  }</option>
+					          <option value="${2021-i }" selected>${2021-i  }</option>
 					        </c:when>
 					        <c:otherwise>
-					          <option value="${beginYear-i }">${beginYear-i }</option>
+					          <option value="${2021-i }">${2021-i }</option>
 					        </c:otherwise>
 					      </c:choose>
 					    </c:forEach>
@@ -427,13 +427,13 @@ function fn_detail_search(){
 					</select>일  &nbsp; ~
 					
 					<select name="endYear" disabled >
-					 <c:forEach   var="i" begin="0" end="5">
+					 <c:forEach   var="i" begin="0" end="10">
 					      <c:choose>
 					        <c:when test="${endYear==endYear-i }">
-					          <option value="${endYear-i }" selected>${endYear-i  }</option>
+					          <option value="${2021-i }" selected>${2021-i  }</option>
 					        </c:when>
 					        <c:otherwise>
-					          <option value="${endYear-i }">${endYear-i }</option>
+					          <option value="${2021-i }">${2021-i }</option>
 					        </c:otherwise>
 					      </c:choose>
 					    </c:forEach>

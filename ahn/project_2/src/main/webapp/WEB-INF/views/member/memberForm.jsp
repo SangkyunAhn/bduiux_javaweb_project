@@ -91,12 +91,17 @@ function fn_overlapped(){
           //alert("작업을완료 했습니다");
        }
     });  //end ajax	 
- }	
+ }
+
+ function fn_display_email2() {
+ 	 var sel = document.member_form.select_email2.value;
+     member_form.email2.value = sel;
+ }
 </script>
 </head>
 <body>
 	<h3>필수입력사항</h3>
-	<form action="${contextPath}/member/addMember.do" method="post">	
+	<form name="member_form" action="${contextPath}/member/addMember.do" method="post">
 	<div id="detail_table">
 		<table>
 			<tbody>
@@ -217,7 +222,7 @@ function fn_overlapped(){
 				<tr class="dot_line">
 					<td class="fixed_join">이메일<br>(e-mail)</td>
 					<td><input size="10px"   type="text" name="email1" /> @ <input  size="10px"  type="text"name="email2" /> 
-						  <select name="email2" onChange=""	title="직접입력">
+						  <select name="select_email2" onChange="fn_display_email2()"	title="직접입력">
 									<option value="non">직접입력</option>
 									<option value="hanmail.net">hanmail.net</option>
 									<option value="naver.com">naver.com</option>
