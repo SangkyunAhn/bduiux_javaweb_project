@@ -161,8 +161,8 @@ Insert into T_GOODS_DETAIL_IMAGE (IMAGE_ID,GOODS_ID,FILENAME,REG_ID,FILETYPE,CRE
 Insert into T_GOODS_DETAIL_IMAGE (IMAGE_ID,GOODS_ID,FILENAME,REG_ID,FILETYPE,CREDATE) values (341,350,'아이큐 투어 나노 펄_detail.jpg','admin','uploadFile',to_date('21/10/21','RR/MM/DD'));
 Insert into T_GOODS_DETAIL_IMAGE (IMAGE_ID,GOODS_ID,FILENAME,REG_ID,FILETYPE,CREDATE) values (342,354,'하이로드 웨이브_main.jpg','admin','main_image',to_date('21/10/23','RR/MM/DD'));
 Insert into T_GOODS_DETAIL_IMAGE (IMAGE_ID,GOODS_ID,FILENAME,REG_ID,FILETYPE,CREDATE) values (343,354,'하이로드 웨이브_detail.jpg','admin','detail_image1',to_date('21/10/23','RR/MM/DD'));
-Insert into T_GOODS_DETAIL_IMAGE (IMAGE_ID,GOODS_ID,FILENAME,REG_ID,FILETYPE,CREDATE) values (345,356,'아이돌 퍼플_main.jpg','admin','main_image',to_date('21/10/23','RR/MM/DD'));
-Insert into T_GOODS_DETAIL_IMAGE (IMAGE_ID,GOODS_ID,FILENAME,REG_ID,FILETYPE,CREDATE) values (346,356,'아이돌 퍼플_detail.jpg','admin','detail_image1',to_date('21/10/23','RR/MM/DD'));
+Insert into T_GOODS_DETAIL_IMAGE (IMAGE_ID,GOODS_ID,FILENAME,REG_ID,FILETYPE,CREDATE) values (344,356,'아이돌 퍼플_main.jpg','admin','main_image',to_date('21/10/23','RR/MM/DD'));
+Insert into T_GOODS_DETAIL_IMAGE (IMAGE_ID,GOODS_ID,FILENAME,REG_ID,FILETYPE,CREDATE) values (345,356,'아이돌 퍼플_detail.jpg','admin','detail_image1',to_date('21/10/23','RR/MM/DD'));
 REM INSERTING into T_SHOPPING_GOODS
 SET DEFINE OFF;
 

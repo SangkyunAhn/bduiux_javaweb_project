@@ -132,6 +132,14 @@
           <artifactId>mysql-connector-java</artifactId>
           <version>5.1.29</version>
       </dependency>
+
+		<!-- https://mvnrepository.com/artifact/org.mariadb.jdbc/mariadb-java-client -->
+		<dependency>
+			<groupId>org.mariadb.jdbc</groupId>
+			<artifactId>mariadb-java-client</artifactId>
+			<version>2.4.1</version>
+		</dependency>
+
          <!-- myBatis 설정관련 라이브러리 -->
         <dependency>
             <groupId>commons-beanutils</groupId>
