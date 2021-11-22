@@ -45,7 +45,7 @@
 	<li>
 		<h3>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;볼링공/소프트볼</h3>
 		<ul>
-			<li><a href="${contextPath}/goods/goodsList.do">[1]등급/헤비오일전용</a></li>
+			<li><a href="#">[1]등급/헤비오일전용</a></li>
 			<li><a href="#">[2]등급/미디엄헤비전용</a></li>
 			<li><a href="#">[3]등급/미디엄전용</a></li>
 			<li><a href="#">[4]등급/미디엄라이트전용</a></li>

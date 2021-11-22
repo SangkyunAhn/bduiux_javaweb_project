@@ -621,11 +621,11 @@ function fn_detail_search(){
              <td colspan=8 class="fixed">
                  <c:forEach   var="page" begin="1" end="10" step="1" >
 		         <c:if test="${section >1 && page==1 }">
-		          <a href="${contextPath}/admin/order/adminOrderMain.do?beginDate=${beginDate}&endDate=${endDate}&section=${section-1}&pageNum=${(section-1)*10 +1 }">&nbsp;&nbsp;</a>
+		          <a href="${contextPath}/admin/order/adminOrderMain.do?command=${command}&beginDate=${beginDate}&endDate=${endDate}&search_type=${search_type}&search_word=${search_word}&section=${section-1}&pageNum=${(section-1)*10 +1 }">&nbsp;&nbsp;</a>
 		         </c:if>
-		          <a href="${contextPath}/admin/order/adminOrderMain.do?beginDate=${beginDate}&endDate=${endDate}&section=${section}&pageNum=${page}">${(section-1)*10 +page } </a>
+		          <a href="${contextPath}/admin/order/adminOrderMain.do?command=${command}&beginDate=${beginDate}&endDate=${endDate}&search_type=${search_type}&search_word=${search_word}&section=${section}&pageNum=${page}">${(section-1)*10 +page } </a>
 		         <c:if test="${page ==10 }">
-		          <a href="${contextPath}/admin/order/adminOrderMain.do?beginDate=${beginDate}&endDate=${endDate}&section=${section+1}&pageNum=${section*10+1}">&nbsp; next</a>
+		          <a href="${contextPath}/admin/order/adminOrderMain.do?command=${command}&beginDate=${beginDate}&endDate=${endDate}&search_type=${search_type}&search_word=${search_word}&section=${section+1}&pageNum=${section*10+1}">&nbsp; next</a>
 		         </c:if> 
 	      		</c:forEach> 
            </td>

@@ -39,6 +39,7 @@ public class AdminMemberControllerImpl extends BaseController  implements AdminM
 		String endDate = dateMap.get("endDate");
 		String search_type = dateMap.get("search_type");
 		String search_word = dateMap.get("search_word");
+		String command = dateMap.get("command");
 
 		if (beginDate == null && endDate == null) {
 			String[] tempDate = calcSearchPeriod(fixedSearchPeriod).split(",");
@@ -73,6 +74,9 @@ public class AdminMemberControllerImpl extends BaseController  implements AdminM
 		mav.addObject("endYear",endDate2[0]);
 		mav.addObject("endMonth",endDate2[1]);
 		mav.addObject("endDay",endDate2[2]);
+		mav.addObject("search_type", search_type);
+		mav.addObject("search_word", search_word);
+		mav.addObject("command", command);
 
 		mav.addObject("chapter", chapter);
 		mav.addObject("pageNum", pageNum);

@@ -220,7 +220,7 @@ function fn_detail_search(){
     formObj.appendChild(i_search_type);
     formObj.appendChild(i_search_word);
     document.body.appendChild(formObj); 
-    formObj.method="post";
+    formObj.method="get";
     formObj.action="${contextPath}/admin/member/adminMemberMain.do";
     formObj.submit();
 	
@@ -516,11 +516,11 @@ function fn_detail_search(){
              <td colspan=8 class="fixed">
                  <c:forEach   var="page" begin="1" end="10" step="1" >
 		         <c:if test="${chapter >1 && page==1 }">
-		          <a href="${contextPath}/admin/member/adminMemberMain.do?beginDate=${beginDate}&endDate=${endDate}&chapter=${chapter-1}&pageNum=${(chapter-1)*10 +1 }">&nbsp;pre &nbsp;</a>
+		          <a href="${contextPath}/admin/member/adminMemberMain.do?command=${command}&beginDate=${beginDate}&endDate=${endDate}&search_type=${search_type}&search_word=${search_word}&chapter=${chapter-1}&pageNum=${(chapter-1)*10 +1 }">&nbsp;pre &nbsp;</a>
 		         </c:if>
-		          <a href="${contextPath}/admin/member/adminMemberMain.do?beginDate=${beginDate}&endDate=${endDate}&chapter=${chapter}&pageNum=${page}">${(chapter-1)*10 +page } </a>
+		          <a href="${contextPath}/admin/member/adminMemberMain.do?command=${command}&beginDate=${beginDate}&endDate=${endDate}&search_type=${search_type}&search_word=${search_word}&chapter=${chapter}&pageNum=${page}">${(chapter-1)*10 +page } </a>
 		         <c:if test="${page ==10 }">
-		          <a href="${contextPath}/admin/member/adminMemberMain.do?beginDate=${beginDate}&endDate=${endDate}&chapter=${chapter+1}&pageNum=${chapter*10+1}">&nbsp; next</a>
+		          <a href="${contextPath}/admin/member/adminMemberMain.do?command=${command}&beginDate=${beginDate}&endDate=${endDate}&search_type=${search_type}&search_word=${search_word}&chapter=${chapter+1}&pageNum=${chapter*10+1}">&nbsp; next</a>
 		         </c:if> 
 	      		</c:forEach> 
            </td>
@@ -534,11 +534,11 @@ function fn_detail_search(){
    <DIV id="page_wrap">
 		 <c:forEach   var="page" begin="1" end="10" step="1" >
 		         <c:if test="${chapter >1 && page==1 }">
-		          <a href="${contextPath}/admin/member/adminMemberMain.do?beginDate=${beginDate}&endDate=${endDate}&chapter=${chapter-1}&pageNum=${(chapter-1)*10 +1 }">&nbsp;pre &nbsp;</a>
+		          <a href="${contextPath}/admin/member/adminMemberMain.do?command=${command}&beginDate=${beginDate}&endDate=${endDate}&search_type=${search_type}&search_word=${search_word}&chapter=${chapter-1}&pageNum=${(chapter-1)*10 +1 }">&nbsp;pre &nbsp;</a>
 		         </c:if>
-		          <a href="${contextPath}/admin/member/adminMemberMain.do?beginDate=${beginDate}&endDate=${endDate}&chapter=${chapter}&pageNum=${page}">${(chapter-1)*10 +page } </a>
+		          <a href="${contextPath}/admin/member/adminMemberMain.do?command=${command}&beginDate=${beginDate}&endDate=${endDate}&search_type=${search_type}&search_word=${search_word}&chapter=${chapter}&pageNum=${page}">${(chapter-1)*10 +page } </a>
 		         <c:if test="${page ==10 }">
-		          <a href="${contextPath}/admin/member/adminMemberMain.do?beginDate=${beginDate}&endDate=${endDate}&chapter=${chapter+1}&pageNum=${chapter*10+1}">&nbsp; next</a>
+		          <a href="${contextPath}/admin/member/adminMemberMain.do?command=${command}&beginDate=${beginDate}&endDate=${endDate}&search_type=${search_type}&search_word=${search_word}&chapter=${chapter+1}&pageNum=${chapter*10+1}">&nbsp; next</a>
 		         </c:if> 
 	      </c:forEach> 
 	</DIV>	
