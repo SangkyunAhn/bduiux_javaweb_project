@@ -68,7 +68,7 @@
 	</resultMap>
 	<insert id="insertNewGoods" parameterType="java.util.Map"   >
 		<selectKey resultType="String" keyProperty="goods_id" order="BEFORE">
-	    	select seq_goods_id.nextval from dual
+	    	select nextval(seq_goods_id) from dual
 	    </selectKey>
 	    
 	    <![CDATA[
@@ -105,7 +105,7 @@
 	</insert> 
 		<insert id="insertGoodsImageFile" parameterType="imageFileVO"   >
 		<selectKey resultType="int" keyProperty="image_id" order="BEFORE">
-	    	select seq_image_id.nextval from dual
+	    	select nextval(seq_image_id) from dual
 	    </selectKey>
 	    <![CDATA[
 		   insert into t_goods_detail_image (image_id,
