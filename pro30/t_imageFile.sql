@@ -1,0 +1,9 @@
+-- SQLINES LICENSE FOR EVALUATION USE ONLY
+CREATE TABLE t_imageFile(
+    imageFileNO BIGINT PRIMARY KEY,
+    imageFileName VARCHAR(50),
+    regDate DATETIME DEFAULT SYSDATE(),
+    articleNO BIGINT
+);
+
+COMMIT;
