@@ -45,9 +45,9 @@
 	</select>
 	
 	<select id="selectOverlappedID" parameterType="String" resultType="String">
-	   select decode(count(*),1, 'true', 0, 'false')
-	   from t_shopping_member
-	   where member_id = #{id}
+		select case count(*) when 1 then  'true'  when 0 then  'false' end
+		from t_shopping_member
+		where member_id = #{id}
 	</select>
 	
   <insert id="insertNewMember"  parameterType="memberVO">

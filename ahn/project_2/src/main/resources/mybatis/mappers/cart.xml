@@ -51,7 +51,7 @@
 	
 	<select id="selectCountInCart" resultType="String"   parameterType="cartVO"  >
 	    <![CDATA[
-		    select decode(count(*),0,'false','true') from t_shopping_cart
+		    select case count(*) when 0 then 'false' else 'true' end from t_shopping_cart
 			where goods_id=#{goods_id}
 			  and member_id=#{member_id} 
 
