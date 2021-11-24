@@ -122,52 +122,52 @@ CREATE TABLE T_SHOPPING_GOODS (
 -- INSERTING into T_GOODS_DETAIL_IMAGE
 /* SET DEFINE OFF; */
 
-Insert into T_GOODS_DETAIL_IMAGE (IMAGE_ID,GOODS_ID,FILENAME,REG_ID,FILETYPE,CREDATE) values (346,394,'더 비스트_main.jpg','admin','main_image',date_format('21/10/16','%y/%m/%d'));
-Insert into T_GOODS_DETAIL_IMAGE (IMAGE_ID,GOODS_ID,FILENAME,REG_ID,FILETYPE,CREDATE) values (347,394,'더 비스트_detail.jpg','admin','detail_image1',date_format('21/10/16','%y/%m/%d'));
-Insert into T_GOODS_DETAIL_IMAGE (IMAGE_ID,GOODS_ID,FILENAME,REG_ID,FILETYPE,CREDATE) values (349,395,'스텔라 패럴랙스_main.jpg','admin','main_image',date_format('21/10/16','%y/%m/%d'));
-Insert into T_GOODS_DETAIL_IMAGE (IMAGE_ID,GOODS_ID,FILENAME,REG_ID,FILETYPE,CREDATE) values (350,395,'스텔라 패럴랙스_detail.jpg','admin','detail_image1',date_format('21/10/16','%y/%m/%d'));
-Insert into T_GOODS_DETAIL_IMAGE (IMAGE_ID,GOODS_ID,FILENAME,REG_ID,FILETYPE,CREDATE) values (351,397,'허니배저 리바이벌_main.jpg','admin','main_image',date_format('21/10/16','%y/%m/%d'));
-Insert into T_GOODS_DETAIL_IMAGE (IMAGE_ID,GOODS_ID,FILENAME,REG_ID,FILETYPE,CREDATE) values (352,397,'허니배저 리바이벌_detail.jpg','admin','detail_image1',date_format('21/10/16','%y/%m/%d'));
-Insert into T_GOODS_DETAIL_IMAGE (IMAGE_ID,GOODS_ID,FILENAME,REG_ID,FILETYPE,CREDATE) values (353,398,'패스트 피치_main.jpg','admin','main_image',date_format('21/10/16','%y/%m/%d'));
-Insert into T_GOODS_DETAIL_IMAGE (IMAGE_ID,GOODS_ID,FILENAME,REG_ID,FILETYPE,CREDATE) values (354,398,'패스트 피치_detail.jpg','admin','detail_image1',date_format('21/10/16','%y/%m/%d'));
-Insert into T_GOODS_DETAIL_IMAGE (IMAGE_ID,GOODS_ID,FILENAME,REG_ID,FILETYPE,CREDATE) values (299,334,'코드 다이나믹_main.jpg','admin','main_image',date_format('21/10/16','%y/%m/%d'));
-Insert into T_GOODS_DETAIL_IMAGE (IMAGE_ID,GOODS_ID,FILENAME,REG_ID,FILETYPE,CREDATE) values (300,334,'코드 다이나믹_detail.jpg','admin','detail_image1',date_format('21/10/16','%y/%m/%d'));
-Insert into T_GOODS_DETAIL_IMAGE (IMAGE_ID,GOODS_ID,FILENAME,REG_ID,FILETYPE,CREDATE) values (301,335,'나도데스 그라스프_main.jpg','admin','main_image',date_format('21/10/16','%y/%m/%d'));
-Insert into T_GOODS_DETAIL_IMAGE (IMAGE_ID,GOODS_ID,FILENAME,REG_ID,FILETYPE,CREDATE) values (302,335,'나도데스 그라스프_detail.jpg','admin','detail_image1',date_format('21/10/16','%y/%m/%d'));
-Insert into T_GOODS_DETAIL_IMAGE (IMAGE_ID,GOODS_ID,FILENAME,REG_ID,FILETYPE,CREDATE) values (303,336,'도미네이션_main.jpg','admin','main_image',date_format('21/10/17','%y/%m/%d'));
-Insert into T_GOODS_DETAIL_IMAGE (IMAGE_ID,GOODS_ID,FILENAME,REG_ID,FILETYPE,CREDATE) values (304,336,'도미네이션_detail.jpg','admin','detail_image1',date_format('21/10/17','%y/%m/%d'));
-Insert into T_GOODS_DETAIL_IMAGE (IMAGE_ID,GOODS_ID,FILENAME,REG_ID,FILETYPE,CREDATE) values (305,337,'허슬 업_main.jpg','admin','main_image',date_format('21/10/17','%y/%m/%d'));
-Insert into T_GOODS_DETAIL_IMAGE (IMAGE_ID,GOODS_ID,FILENAME,REG_ID,FILETYPE,CREDATE) values (306,337,'허슬 업_detail.jpg','admin','detail_image1',date_format('21/10/17','%y/%m/%d'));
-Insert into T_GOODS_DETAIL_IMAGE (IMAGE_ID,GOODS_ID,FILENAME,REG_ID,FILETYPE,CREDATE) values (307,338,'피치 블랙_main.jpg','admin','main_image',date_format('21/10/17','%y/%m/%d'));
-Insert into T_GOODS_DETAIL_IMAGE (IMAGE_ID,GOODS_ID,FILENAME,REG_ID,FILETYPE,CREDATE) values (308,338,'피치 블랙_detail.jpg','admin','detail_image1',date_format('21/10/17','%y/%m/%d'));
-Insert into T_GOODS_DETAIL_IMAGE (IMAGE_ID,GOODS_ID,FILENAME,REG_ID,FILETYPE,CREDATE) values (309,339,'페펄랙스_main.jpg','admin','main_image',date_format('21/10/17','%y/%m/%d'));
-Insert into T_GOODS_DETAIL_IMAGE (IMAGE_ID,GOODS_ID,FILENAME,REG_ID,FILETYPE,CREDATE) values (310,339,'페펄랙스_detail.jpg','admin','detail_image1',date_format('21/10/17','%y/%m/%d'));
-Insert into T_GOODS_DETAIL_IMAGE (IMAGE_ID,GOODS_ID,FILENAME,REG_ID,FILETYPE,CREDATE) values (311,340,'퍼플펄우레탄_main.jpg','admin','main_image',date_format('21/10/17','%y/%m/%d'));
-Insert into T_GOODS_DETAIL_IMAGE (IMAGE_ID,GOODS_ID,FILENAME,REG_ID,FILETYPE,CREDATE) values (312,340,'퍼플펄우레탄_detail.jpg','admin','detail_image1',date_format('21/10/17','%y/%m/%d'));
-Insert into T_GOODS_DETAIL_IMAGE (IMAGE_ID,GOODS_ID,FILENAME,REG_ID,FILETYPE,CREDATE) values (313,341,'다크 코드_main.jpg','admin','main_image',date_format('21/10/17','%y/%m/%d'));
-Insert into T_GOODS_DETAIL_IMAGE (IMAGE_ID,GOODS_ID,FILENAME,REG_ID,FILETYPE,CREDATE) values (314,341,'다크 코드_detail.jpg','admin','detail_image1',date_format('21/10/17','%y/%m/%d'));
-Insert into T_GOODS_DETAIL_IMAGE (IMAGE_ID,GOODS_ID,FILENAME,REG_ID,FILETYPE,CREDATE) values (315,342,'솔라 패럴랙스_main.jpg','admin','main_image',date_format('21/10/17','%y/%m/%d'));
-Insert into T_GOODS_DETAIL_IMAGE (IMAGE_ID,GOODS_ID,FILENAME,REG_ID,FILETYPE,CREDATE) values (316,342,'솔라 패럴랙스_detail.jpg','admin','detail_image1',date_format('21/10/17','%y/%m/%d'));
-Insert into T_GOODS_DETAIL_IMAGE (IMAGE_ID,GOODS_ID,FILENAME,REG_ID,FILETYPE,CREDATE) values (317,343,'패럴랙스 이펙트_main.jpg','admin','main_image',date_format('21/10/17','%y/%m/%d'));
-Insert into T_GOODS_DETAIL_IMAGE (IMAGE_ID,GOODS_ID,FILENAME,REG_ID,FILETYPE,CREDATE) values (339,343,'패럴랙스 이펙트_detail.jpg','admin','uploadFile',date_format('21/10/21','%y/%m/%d'));
-Insert into T_GOODS_DETAIL_IMAGE (IMAGE_ID,GOODS_ID,FILENAME,REG_ID,FILETYPE,CREDATE) values (319,344,'컴플리트 피직스_main.jpg','admin','main_image',date_format('21/10/17','%y/%m/%d'));
-Insert into T_GOODS_DETAIL_IMAGE (IMAGE_ID,GOODS_ID,FILENAME,REG_ID,FILETYPE,CREDATE) values (320,344,'컴플리트 피직스_detail.jpg','admin','detail_image1',date_format('21/10/17','%y/%m/%d'));
-Insert into T_GOODS_DETAIL_IMAGE (IMAGE_ID,GOODS_ID,FILENAME,REG_ID,FILETYPE,CREDATE) values (321,345,'매치 업_main.jpg','admin','main_image',date_format('21/10/17','%y/%m/%d'));
-Insert into T_GOODS_DETAIL_IMAGE (IMAGE_ID,GOODS_ID,FILENAME,REG_ID,FILETYPE,CREDATE) values (322,345,'매치 업_detail.jpg','admin','detail_image1',date_format('21/10/17','%y/%m/%d'));
-Insert into T_GOODS_DETAIL_IMAGE (IMAGE_ID,GOODS_ID,FILENAME,REG_ID,FILETYPE,CREDATE) values (323,346,'블랙위도우 하이브리드_main.jpg','admin','main_image',date_format('21/10/17','%y/%m/%d'));
-Insert into T_GOODS_DETAIL_IMAGE (IMAGE_ID,GOODS_ID,FILENAME,REG_ID,FILETYPE,CREDATE) values (324,346,'블랙위도우 하이브리드_detail.jpg','admin','detail_image1',date_format('21/10/17','%y/%m/%d'));
-Insert into T_GOODS_DETAIL_IMAGE (IMAGE_ID,GOODS_ID,FILENAME,REG_ID,FILETYPE,CREDATE) values (325,347,'피직스 마에스트로_main.jpg','admin','main_image',date_format('21/10/20','%y/%m/%d'));
-Insert into T_GOODS_DETAIL_IMAGE (IMAGE_ID,GOODS_ID,FILENAME,REG_ID,FILETYPE,CREDATE) values (326,347,'피직스 마에스트로_detail.jpg','admin','detail_image1',date_format('21/10/20','%y/%m/%d'));
-Insert into T_GOODS_DETAIL_IMAGE (IMAGE_ID,GOODS_ID,FILENAME,REG_ID,FILETYPE,CREDATE) values (327,348,'RST X-1_main.jpg','admin','main_image',date_format('21/10/20','%y/%m/%d'));
-Insert into T_GOODS_DETAIL_IMAGE (IMAGE_ID,GOODS_ID,FILENAME,REG_ID,FILETYPE,CREDATE) values (328,348,'RST X-1_detail.jpg','admin','detail_image1',date_format('21/10/20','%y/%m/%d'));
-Insert into T_GOODS_DETAIL_IMAGE (IMAGE_ID,GOODS_ID,FILENAME,REG_ID,FILETYPE,CREDATE) values (330,349,'트로피컬 써지_main.jpg','admin','main_image',date_format('21/10/20','%y/%m/%d'));
-Insert into T_GOODS_DETAIL_IMAGE (IMAGE_ID,GOODS_ID,FILENAME,REG_ID,FILETYPE,CREDATE) values (331,349,'트로피컬 써지_detail.jpg','admin','detail_image1',date_format('21/10/20','%y/%m/%d'));
-Insert into T_GOODS_DETAIL_IMAGE (IMAGE_ID,GOODS_ID,FILENAME,REG_ID,FILETYPE,CREDATE) values (334,350,'아이큐 투어 나노 펄_main.jpg','admin','main_image',date_format('21/10/21','%y/%m/%d'));
-Insert into T_GOODS_DETAIL_IMAGE (IMAGE_ID,GOODS_ID,FILENAME,REG_ID,FILETYPE,CREDATE) values (341,350,'아이큐 투어 나노 펄_detail.jpg','admin','uploadFile',date_format('21/10/21','%y/%m/%d'));
-Insert into T_GOODS_DETAIL_IMAGE (IMAGE_ID,GOODS_ID,FILENAME,REG_ID,FILETYPE,CREDATE) values (342,354,'하이로드 웨이브_main.jpg','admin','main_image',date_format('21/10/23','%y/%m/%d'));
-Insert into T_GOODS_DETAIL_IMAGE (IMAGE_ID,GOODS_ID,FILENAME,REG_ID,FILETYPE,CREDATE) values (343,354,'하이로드 웨이브_detail.jpg','admin','detail_image1',date_format('21/10/23','%y/%m/%d'));
-Insert into T_GOODS_DETAIL_IMAGE (IMAGE_ID,GOODS_ID,FILENAME,REG_ID,FILETYPE,CREDATE) values (344,356,'아이돌 퍼플_main.jpg','admin','main_image',date_format('21/10/23','%y/%m/%d'));
-Insert into T_GOODS_DETAIL_IMAGE (IMAGE_ID,GOODS_ID,FILENAME,REG_ID,FILETYPE,CREDATE) values (345,356,'아이돌 퍼플_detail.jpg','admin','detail_image1',date_format('21/10/23','%y/%m/%d'));
+Insert into T_GOODS_DETAIL_IMAGE (IMAGE_ID,GOODS_ID,FILENAME,REG_ID,FILETYPE,CREDATE) values (346,394,'394_main.JPG','admin','main_image',date_format('21/10/16','%y/%m/%d'));
+Insert into T_GOODS_DETAIL_IMAGE (IMAGE_ID,GOODS_ID,FILENAME,REG_ID,FILETYPE,CREDATE) values (347,394,'394_detail.JPG','admin','detail_image1',date_format('21/10/16','%y/%m/%d'));
+Insert into T_GOODS_DETAIL_IMAGE (IMAGE_ID,GOODS_ID,FILENAME,REG_ID,FILETYPE,CREDATE) values (349,395,'395_main.JPG','admin','main_image',date_format('21/10/16','%y/%m/%d'));
+Insert into T_GOODS_DETAIL_IMAGE (IMAGE_ID,GOODS_ID,FILENAME,REG_ID,FILETYPE,CREDATE) values (350,395,'395_detail.JPG','admin','detail_image1',date_format('21/10/16','%y/%m/%d'));
+Insert into T_GOODS_DETAIL_IMAGE (IMAGE_ID,GOODS_ID,FILENAME,REG_ID,FILETYPE,CREDATE) values (351,397,'397_main.JPG','admin','main_image',date_format('21/10/16','%y/%m/%d'));
+Insert into T_GOODS_DETAIL_IMAGE (IMAGE_ID,GOODS_ID,FILENAME,REG_ID,FILETYPE,CREDATE) values (352,397,'397_detail.JPG','admin','detail_image1',date_format('21/10/16','%y/%m/%d'));
+Insert into T_GOODS_DETAIL_IMAGE (IMAGE_ID,GOODS_ID,FILENAME,REG_ID,FILETYPE,CREDATE) values (353,398,'398_main.JPG','admin','main_image',date_format('21/10/16','%y/%m/%d'));
+Insert into T_GOODS_DETAIL_IMAGE (IMAGE_ID,GOODS_ID,FILENAME,REG_ID,FILETYPE,CREDATE) values (354,398,'398_detail.JPG','admin','detail_image1',date_format('21/10/16','%y/%m/%d'));
+Insert into T_GOODS_DETAIL_IMAGE (IMAGE_ID,GOODS_ID,FILENAME,REG_ID,FILETYPE,CREDATE) values (299,334,'334_main.JPG','admin','main_image',date_format('21/10/16','%y/%m/%d'));
+Insert into T_GOODS_DETAIL_IMAGE (IMAGE_ID,GOODS_ID,FILENAME,REG_ID,FILETYPE,CREDATE) values (300,334,'334_detail.JPG','admin','detail_image1',date_format('21/10/16','%y/%m/%d'));
+Insert into T_GOODS_DETAIL_IMAGE (IMAGE_ID,GOODS_ID,FILENAME,REG_ID,FILETYPE,CREDATE) values (301,335,'335_main.JPG','admin','main_image',date_format('21/10/16','%y/%m/%d'));
+Insert into T_GOODS_DETAIL_IMAGE (IMAGE_ID,GOODS_ID,FILENAME,REG_ID,FILETYPE,CREDATE) values (302,335,'335_detail.JPG','admin','detail_image1',date_format('21/10/16','%y/%m/%d'));
+Insert into T_GOODS_DETAIL_IMAGE (IMAGE_ID,GOODS_ID,FILENAME,REG_ID,FILETYPE,CREDATE) values (303,336,'336_main.JPG','admin','main_image',date_format('21/10/17','%y/%m/%d'));
+Insert into T_GOODS_DETAIL_IMAGE (IMAGE_ID,GOODS_ID,FILENAME,REG_ID,FILETYPE,CREDATE) values (304,336,'336_detail.JPG','admin','detail_image1',date_format('21/10/17','%y/%m/%d'));
+Insert into T_GOODS_DETAIL_IMAGE (IMAGE_ID,GOODS_ID,FILENAME,REG_ID,FILETYPE,CREDATE) values (305,337,'337_main.JPG','admin','main_image',date_format('21/10/17','%y/%m/%d'));
+Insert into T_GOODS_DETAIL_IMAGE (IMAGE_ID,GOODS_ID,FILENAME,REG_ID,FILETYPE,CREDATE) values (306,337,'337_detail.JPG','admin','detail_image1',date_format('21/10/17','%y/%m/%d'));
+Insert into T_GOODS_DETAIL_IMAGE (IMAGE_ID,GOODS_ID,FILENAME,REG_ID,FILETYPE,CREDATE) values (307,338,'338_main.JPG','admin','main_image',date_format('21/10/17','%y/%m/%d'));
+Insert into T_GOODS_DETAIL_IMAGE (IMAGE_ID,GOODS_ID,FILENAME,REG_ID,FILETYPE,CREDATE) values (308,338,'338_detail.JPG','admin','detail_image1',date_format('21/10/17','%y/%m/%d'));
+Insert into T_GOODS_DETAIL_IMAGE (IMAGE_ID,GOODS_ID,FILENAME,REG_ID,FILETYPE,CREDATE) values (309,339,'339_main.JPG','admin','main_image',date_format('21/10/17','%y/%m/%d'));
+Insert into T_GOODS_DETAIL_IMAGE (IMAGE_ID,GOODS_ID,FILENAME,REG_ID,FILETYPE,CREDATE) values (310,339,'339_detail.JPG','admin','detail_image1',date_format('21/10/17','%y/%m/%d'));
+Insert into T_GOODS_DETAIL_IMAGE (IMAGE_ID,GOODS_ID,FILENAME,REG_ID,FILETYPE,CREDATE) values (311,340,'340_main.JPG','admin','main_image',date_format('21/10/17','%y/%m/%d'));
+Insert into T_GOODS_DETAIL_IMAGE (IMAGE_ID,GOODS_ID,FILENAME,REG_ID,FILETYPE,CREDATE) values (312,340,'340_detail.JPG','admin','detail_image1',date_format('21/10/17','%y/%m/%d'));
+Insert into T_GOODS_DETAIL_IMAGE (IMAGE_ID,GOODS_ID,FILENAME,REG_ID,FILETYPE,CREDATE) values (313,341,'341_main.JPG','admin','main_image',date_format('21/10/17','%y/%m/%d'));
+Insert into T_GOODS_DETAIL_IMAGE (IMAGE_ID,GOODS_ID,FILENAME,REG_ID,FILETYPE,CREDATE) values (314,341,'341_detail.JPG','admin','detail_image1',date_format('21/10/17','%y/%m/%d'));
+Insert into T_GOODS_DETAIL_IMAGE (IMAGE_ID,GOODS_ID,FILENAME,REG_ID,FILETYPE,CREDATE) values (315,342,'342_main.JPG','admin','main_image',date_format('21/10/17','%y/%m/%d'));
+Insert into T_GOODS_DETAIL_IMAGE (IMAGE_ID,GOODS_ID,FILENAME,REG_ID,FILETYPE,CREDATE) values (316,342,'342_detail.JPG','admin','detail_image1',date_format('21/10/17','%y/%m/%d'));
+Insert into T_GOODS_DETAIL_IMAGE (IMAGE_ID,GOODS_ID,FILENAME,REG_ID,FILETYPE,CREDATE) values (317,343,'343_main.JPG','admin','main_image',date_format('21/10/17','%y/%m/%d'));
+Insert into T_GOODS_DETAIL_IMAGE (IMAGE_ID,GOODS_ID,FILENAME,REG_ID,FILETYPE,CREDATE) values (339,343,'343_detail.JPG','admin','uploadFile',date_format('21/10/21','%y/%m/%d'));
+Insert into T_GOODS_DETAIL_IMAGE (IMAGE_ID,GOODS_ID,FILENAME,REG_ID,FILETYPE,CREDATE) values (319,344,'344_main.JPG','admin','main_image',date_format('21/10/17','%y/%m/%d'));
+Insert into T_GOODS_DETAIL_IMAGE (IMAGE_ID,GOODS_ID,FILENAME,REG_ID,FILETYPE,CREDATE) values (320,344,'344_detail.JPG','admin','detail_image1',date_format('21/10/17','%y/%m/%d'));
+Insert into T_GOODS_DETAIL_IMAGE (IMAGE_ID,GOODS_ID,FILENAME,REG_ID,FILETYPE,CREDATE) values (321,345,'345_main.JPG','admin','main_image',date_format('21/10/17','%y/%m/%d'));
+Insert into T_GOODS_DETAIL_IMAGE (IMAGE_ID,GOODS_ID,FILENAME,REG_ID,FILETYPE,CREDATE) values (322,345,'345_detail.JPG','admin','detail_image1',date_format('21/10/17','%y/%m/%d'));
+Insert into T_GOODS_DETAIL_IMAGE (IMAGE_ID,GOODS_ID,FILENAME,REG_ID,FILETYPE,CREDATE) values (323,346,'346_main.JPG','admin','main_image',date_format('21/10/17','%y/%m/%d'));
+Insert into T_GOODS_DETAIL_IMAGE (IMAGE_ID,GOODS_ID,FILENAME,REG_ID,FILETYPE,CREDATE) values (324,346,'346_detail.JPG','admin','detail_image1',date_format('21/10/17','%y/%m/%d'));
+Insert into T_GOODS_DETAIL_IMAGE (IMAGE_ID,GOODS_ID,FILENAME,REG_ID,FILETYPE,CREDATE) values (325,347,'347_main.JPG','admin','main_image',date_format('21/10/20','%y/%m/%d'));
+Insert into T_GOODS_DETAIL_IMAGE (IMAGE_ID,GOODS_ID,FILENAME,REG_ID,FILETYPE,CREDATE) values (326,347,'347_detail.JPG','admin','detail_image1',date_format('21/10/20','%y/%m/%d'));
+Insert into T_GOODS_DETAIL_IMAGE (IMAGE_ID,GOODS_ID,FILENAME,REG_ID,FILETYPE,CREDATE) values (327,348,'348_main.JPG','admin','main_image',date_format('21/10/20','%y/%m/%d'));
+Insert into T_GOODS_DETAIL_IMAGE (IMAGE_ID,GOODS_ID,FILENAME,REG_ID,FILETYPE,CREDATE) values (328,348,'348_detail.JPG','admin','detail_image1',date_format('21/10/20','%y/%m/%d'));
+Insert into T_GOODS_DETAIL_IMAGE (IMAGE_ID,GOODS_ID,FILENAME,REG_ID,FILETYPE,CREDATE) values (330,349,'349_main.JPG','admin','main_image',date_format('21/10/20','%y/%m/%d'));
+Insert into T_GOODS_DETAIL_IMAGE (IMAGE_ID,GOODS_ID,FILENAME,REG_ID,FILETYPE,CREDATE) values (331,349,'349_detail.JPG','admin','detail_image1',date_format('21/10/20','%y/%m/%d'));
+Insert into T_GOODS_DETAIL_IMAGE (IMAGE_ID,GOODS_ID,FILENAME,REG_ID,FILETYPE,CREDATE) values (334,350,'350_main.JPG','admin','main_image',date_format('21/10/21','%y/%m/%d'));
+Insert into T_GOODS_DETAIL_IMAGE (IMAGE_ID,GOODS_ID,FILENAME,REG_ID,FILETYPE,CREDATE) values (341,350,'350_detail.JPG','admin','uploadFile',date_format('21/10/21','%y/%m/%d'));
+Insert into T_GOODS_DETAIL_IMAGE (IMAGE_ID,GOODS_ID,FILENAME,REG_ID,FILETYPE,CREDATE) values (342,354,'354_main.JPG','admin','main_image',date_format('21/10/23','%y/%m/%d'));
+Insert into T_GOODS_DETAIL_IMAGE (IMAGE_ID,GOODS_ID,FILENAME,REG_ID,FILETYPE,CREDATE) values (343,354,'354_detail.JPG','admin','detail_image1',date_format('21/10/23','%y/%m/%d'));
+Insert into T_GOODS_DETAIL_IMAGE (IMAGE_ID,GOODS_ID,FILENAME,REG_ID,FILETYPE,CREDATE) values (344,356,'356_main.JPG','admin','main_image',date_format('21/10/23','%y/%m/%d'));
+Insert into T_GOODS_DETAIL_IMAGE (IMAGE_ID,GOODS_ID,FILENAME,REG_ID,FILETYPE,CREDATE) values (345,356,'356_detail.JPG','admin','detail_image1',date_format('21/10/23','%y/%m/%d'));
 -- INSERTING into T_SHOPPING_GOODS
 /* SET DEFINE OFF; */
 
@@ -218,9 +218,9 @@ Insert into T_SHOPPING_MEMBER (MEMBER_ID,MEMBER_PW,MEMBER_NAME,MEMBER_GENDER,TEL
 Insert into T_SHOPPING_MEMBER (MEMBER_ID,MEMBER_PW,MEMBER_NAME,MEMBER_GENDER,TEL1,TEL2,TEL3,HP1,HP2,HP3,SMSSTS_YN,EMAIL1,EMAIL2,EMAILSTS_YN,ZIPCODE,ROADADDRESS,JIBUNADDRESS,NAMUJIADDRESS,MEMBER_BIRTH_Y,MEMBER_BIRTH_M,MEMBER_BIRTH_D,MEMBER_BIRTH_GN,JOINDATE,DEL_YN) values ('yoon6','1212','윤동혁','101','02','1018','2222','010','2018','3333','Y','yoon6','test.com','Y','13547','경기 성남시 분당구 고기로 25 (동원동)','경기 성남시 분당구 동원동 79-1','럭키빌딩 118호','1999','4','28','2',date_format('18/10/18','%y/%m/%d'),'N');
 -- INSERTING into T_SHOPPING_ORDER
 /* SET DEFINE OFF; */
-Insert into T_SHOPPING_ORDER (ORDER_SEQ_NUM,ORDER_ID,MEMBER_ID,GOODS_ID,ORDERER_NAME,GOODS_TITLE,ORDER_GOODS_QTY,GOODS_SALES_PRICE,GOODS_FILENAME,RECEIVER_NAME,RECEIVER_HP1,RECEIVER_HP2,RECEIVER_HP3,RECEIVER_TEL1,RECEIVER_TEL2,RECEIVER_TEL3,DELIVERY_ADDRESS,DELIVERY_METHOD,DELIVERY_MESSAGE,GIFT_WRAPPING,PAY_METHOD,CARD_COM_NAME,CARD_PAY_MONTH,PAY_ORDERER_HP_NUM,DELIVERY_STATE,PAY_ORDER_TIME,ORDERER_HP) values (88,92,'ahn',344,'안상균','컴플리트 피직스',1,27000,'컴플리트 피직스_main.jpg','김현섭','010','2222','3333','02','1111','2222','우편번호:13547<br>도로명 주소:경기 성남시 분당구 고기로 25 (동원동)<br>[지번 주소:경기 성남시 분당구 동원동 79-1]<br>럭키빌딩 101호','일반택배',null,'no','신용카드<Br>카드사:삼성<br>할부개월수:일시불','삼성','일시불','해당없음','cancel_order',date_format('21/11/11','%y/%m/%d'),'010-2222-3333');
-Insert into T_SHOPPING_ORDER (ORDER_SEQ_NUM,ORDER_ID,MEMBER_ID,GOODS_ID,ORDERER_NAME,GOODS_TITLE,ORDER_GOODS_QTY,GOODS_SALES_PRICE,GOODS_FILENAME,RECEIVER_NAME,RECEIVER_HP1,RECEIVER_HP2,RECEIVER_HP3,RECEIVER_TEL1,RECEIVER_TEL2,RECEIVER_TEL3,DELIVERY_ADDRESS,DELIVERY_METHOD,DELIVERY_MESSAGE,GIFT_WRAPPING,PAY_METHOD,CARD_COM_NAME,CARD_PAY_MONTH,PAY_ORDERER_HP_NUM,DELIVERY_STATE,PAY_ORDER_TIME,ORDERER_HP) values (89,93,'kim',354,'김현섭','하이로드 웨이브',1,27000,'하이로드 웨이브_main.jpg','윤동혁','010','2222','3333','02','1111','2222','우편번호:13547<br>도로명 주소:경기 성남시 분당구 고기로 25 (동원동)<br>[지번 주소:경기 성남시 분당구 동원동 79-1]<br>럭키빌딩 101호','일반택배',null,'no','신용카드<Br>카드사:삼성<br>할부개월수:일시불','삼성','일시불','해당없음','delivering',date_format('21/11/12','%y/%m/%d'),'010-2232-3343');
-Insert into T_SHOPPING_ORDER (ORDER_SEQ_NUM,ORDER_ID,MEMBER_ID,GOODS_ID,ORDERER_NAME,GOODS_TITLE,ORDER_GOODS_QTY,GOODS_SALES_PRICE,GOODS_FILENAME,RECEIVER_NAME,RECEIVER_HP1,RECEIVER_HP2,RECEIVER_HP3,RECEIVER_TEL1,RECEIVER_TEL2,RECEIVER_TEL3,DELIVERY_ADDRESS,DELIVERY_METHOD,DELIVERY_MESSAGE,GIFT_WRAPPING,PAY_METHOD,CARD_COM_NAME,CARD_PAY_MONTH,PAY_ORDERER_HP_NUM,DELIVERY_STATE,PAY_ORDER_TIME,ORDERER_HP) values (90,94,'yoon',354,'윤동혁','하이로드 웨이브',1,27000,'하이로드 웨이브_main.jpg','안상균','010','2222','3333','02','1111','2222','우편번호:13547<br>도로명 주소:경기 성남시 분당구 고기로 25 (동원동)<br>[지번 주소:경기 성남시 분당구 동원동 79-1]<br>럭키빌딩 101호','일반택배',null,'no','신용카드<Br>카드사:삼성<br>할부개월수:일시불','삼성','일시불','해당없음','cancel_order',date_format('21/11/13','%y/%m/%d'),'010-2122-1333');
+Insert into T_SHOPPING_ORDER (ORDER_SEQ_NUM,ORDER_ID,MEMBER_ID,GOODS_ID,ORDERER_NAME,GOODS_TITLE,ORDER_GOODS_QTY,GOODS_SALES_PRICE,GOODS_FILENAME,RECEIVER_NAME,RECEIVER_HP1,RECEIVER_HP2,RECEIVER_HP3,RECEIVER_TEL1,RECEIVER_TEL2,RECEIVER_TEL3,DELIVERY_ADDRESS,DELIVERY_METHOD,DELIVERY_MESSAGE,GIFT_WRAPPING,PAY_METHOD,CARD_COM_NAME,CARD_PAY_MONTH,PAY_ORDERER_HP_NUM,DELIVERY_STATE,PAY_ORDER_TIME,ORDERER_HP) values (88,92,'ahn',344,'안상균','컴플리트 피직스',1,27000,'컴플리트 피직스_main.JPG','김현섭','010','2222','3333','02','1111','2222','우편번호:13547<br>도로명 주소:경기 성남시 분당구 고기로 25 (동원동)<br>[지번 주소:경기 성남시 분당구 동원동 79-1]<br>럭키빌딩 101호','일반택배',null,'no','신용카드<Br>카드사:삼성<br>할부개월수:일시불','삼성','일시불','해당없음','cancel_order',date_format('21/11/11','%y/%m/%d'),'010-2222-3333');
+Insert into T_SHOPPING_ORDER (ORDER_SEQ_NUM,ORDER_ID,MEMBER_ID,GOODS_ID,ORDERER_NAME,GOODS_TITLE,ORDER_GOODS_QTY,GOODS_SALES_PRICE,GOODS_FILENAME,RECEIVER_NAME,RECEIVER_HP1,RECEIVER_HP2,RECEIVER_HP3,RECEIVER_TEL1,RECEIVER_TEL2,RECEIVER_TEL3,DELIVERY_ADDRESS,DELIVERY_METHOD,DELIVERY_MESSAGE,GIFT_WRAPPING,PAY_METHOD,CARD_COM_NAME,CARD_PAY_MONTH,PAY_ORDERER_HP_NUM,DELIVERY_STATE,PAY_ORDER_TIME,ORDERER_HP) values (89,93,'kim',354,'김현섭','하이로드 웨이브',1,27000,'하이로드 웨이브_main.JPG','윤동혁','010','2222','3333','02','1111','2222','우편번호:13547<br>도로명 주소:경기 성남시 분당구 고기로 25 (동원동)<br>[지번 주소:경기 성남시 분당구 동원동 79-1]<br>럭키빌딩 101호','일반택배',null,'no','신용카드<Br>카드사:삼성<br>할부개월수:일시불','삼성','일시불','해당없음','delivering',date_format('21/11/12','%y/%m/%d'),'010-2232-3343');
+Insert into T_SHOPPING_ORDER (ORDER_SEQ_NUM,ORDER_ID,MEMBER_ID,GOODS_ID,ORDERER_NAME,GOODS_TITLE,ORDER_GOODS_QTY,GOODS_SALES_PRICE,GOODS_FILENAME,RECEIVER_NAME,RECEIVER_HP1,RECEIVER_HP2,RECEIVER_HP3,RECEIVER_TEL1,RECEIVER_TEL2,RECEIVER_TEL3,DELIVERY_ADDRESS,DELIVERY_METHOD,DELIVERY_MESSAGE,GIFT_WRAPPING,PAY_METHOD,CARD_COM_NAME,CARD_PAY_MONTH,PAY_ORDERER_HP_NUM,DELIVERY_STATE,PAY_ORDER_TIME,ORDERER_HP) values (90,94,'yoon',354,'윤동혁','하이로드 웨이브',1,27000,'하이로드 웨이브_main.JPG','안상균','010','2222','3333','02','1111','2222','우편번호:13547<br>도로명 주소:경기 성남시 분당구 고기로 25 (동원동)<br>[지번 주소:경기 성남시 분당구 동원동 79-1]<br>럭키빌딩 101호','일반택배',null,'no','신용카드<Br>카드사:삼성<br>할부개월수:일시불','삼성','일시불','해당없음','cancel_order',date_format('21/11/13','%y/%m/%d'),'010-2122-1333');
 -- INSERTING into T_SHOPPING_CART
 /* SET DEFINE OFF; */
 
