@@ -7,6 +7,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
+import com.bookshop01.board.service.BoardService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.EnableAspectJAutoProxy;
 import org.springframework.stereotype.Controller;
@@ -23,6 +24,8 @@ import com.bookshop01.goods.vo.GoodsVO;
 public class MainController extends BaseController {
 	@Autowired
 	private GoodsService goodsService;
+	@Autowired
+	private BoardService boardService;
 
 	@RequestMapping(value= "/main/main.do" ,method={RequestMethod.POST,RequestMethod.GET})
 	public ModelAndView main(HttpServletRequest request, HttpServletResponse response) throws Exception{
@@ -34,7 +37,10 @@ public class MainController extends BaseController {
 		session=request.getSession();
 		session.setAttribute("side_menu", "user");
 		Map<String,List<GoodsVO>> goodsMap=goodsService.listGoods();
+		List articlesList = boardService.listArticles();
 		mav.addObject("goodsMap", goodsMap);
+		mav.addObject("articlesList", articlesList);
+
 		return mav;
 	}
 }

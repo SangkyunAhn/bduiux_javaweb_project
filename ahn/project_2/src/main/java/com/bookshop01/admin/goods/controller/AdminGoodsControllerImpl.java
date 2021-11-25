@@ -32,7 +32,7 @@ import com.bookshop01.member.vo.MemberVO;
 @Controller("adminGoodsController")
 @RequestMapping(value="/admin/goods")
 public class AdminGoodsControllerImpl extends BaseController  implements AdminGoodsController{
-	private static final String CURR_IMAGE_REPO_PATH = "/home/ubuntu/shopping/file_repo";
+	private static final String CURR_IMAGE_REPO_PATH = "C:/shopping/file_repo";
 	@Autowired
 	AdminGoodsService adminGoodsService;
 
@@ -92,6 +92,7 @@ public class AdminGoodsControllerImpl extends BaseController  implements AdminGo
 
 		mav.addObject("section", section);
 		mav.addObject("pageNum", pageNum);
+
 		return mav;
 
 	}

@@ -6,16 +6,32 @@
 <c:set var="contextPath"  value="${pageContext.request.contextPath}"  />
 <%
   request.setCharacterEncoding("UTF-8");
-%>  
+%>
 
 <div id="ad_main_banner">
-	<ul class="bjqs">	 	
+	<ul class="bjqs">
 	  <li><img width="775" height="145" src="${contextPath}/resources/image/main_banner01.PNG"></li>
 		<li><img width="775" height="145" src="${contextPath}/resources/image/main_banner02.PNG"></li>
 		<li><img width="775" height="145" src="${contextPath}/resources/image/main_banner03.PNG"></li> 
 	</ul>
 </div>
 <div class="main_book">
+    <h3>공지사항
+        <c:forEach var="i" begin="0" end="165">&nbsp;</c:forEach>
+        <a href="${contextPath}/board/listArticles.do">더보기</a>
+    </h3>
+    <table width="945">
+    	<c:forEach  var="article" items="${articlesList }" varStatus="articleNum" >
+    	<tr>
+    	    <c:if test="${articleNum.index < 5}">
+    	        <td style="font-size: 12px" width="15">${articleNum.count}.</td>
+    		    <td style="font-size: 12px;"><a href="${contextPath}/board/viewArticle.do?articleNO=${article.articleNO}">${article.title}</a></td>
+    		    <td style="font-size: 12px;">${article.writeDate}</td>
+    		</c:if>
+        </tr>
+    	</c:forEach>
+    </table>
+    <br>
    <c:set  var="goods_count" value="0" />
 	<h3>이젠볼링 추천상품</h3>
 	<c:forEach var="item" items="${goodsMap.bestseller }">
