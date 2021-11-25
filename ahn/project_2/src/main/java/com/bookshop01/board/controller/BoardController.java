@@ -9,10 +9,13 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.multipart.MultipartHttpServletRequest;
 import org.springframework.web.servlet.ModelAndView;
 
+import java.util.Map;
+
 
 public interface BoardController {
 	
-	public ModelAndView listArticles(HttpServletRequest request, HttpServletResponse response) throws Exception;
+	public ModelAndView listArticles(@RequestParam Map<String, String> dataMap,
+									 HttpServletRequest request, HttpServletResponse response) throws Exception;
 	
 	public ResponseEntity addNewArticle(MultipartHttpServletRequest multipartRequest,HttpServletResponse response) throws Exception;
 	

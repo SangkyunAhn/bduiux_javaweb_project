@@ -520,7 +520,7 @@ function fn_detail_search(){
 		         </c:if>
 		          <a href="${contextPath}/admin/member/adminMemberMain.do?command=${command}&beginDate=${beginDate}&endDate=${endDate}&search_type=${search_type}&search_word=${search_word}&chapter=${chapter}&pageNum=${page}">${(chapter-1)*10 +page } </a>
 		         <c:if test="${page ==10 }">
-		          <a href="${contextPath}/admin/member/adminMemberMain.do?command=${command}&beginDate=${beginDate}&endDate=${endDate}&search_type=${search_type}&search_word=${search_word}&chapter=${chapter+1}&pageNum=${chapter*10+1}">&nbsp; next</a>
+		          <a href="${contextPath}/admin/member/adminMemberMain.do?command=${command}&beginDate=${beginDate}&endDate=${endDate}&search_type=${search_type}&search_word=${search_word}&chapter=${chapter+1}&pageNum=1">&nbsp; next</a>
 		         </c:if> 
 	      		</c:forEach> 
            </td>
@@ -538,7 +538,7 @@ function fn_detail_search(){
 		         </c:if>
 		          <a href="${contextPath}/admin/member/adminMemberMain.do?command=${command}&beginDate=${beginDate}&endDate=${endDate}&search_type=${search_type}&search_word=${search_word}&chapter=${chapter}&pageNum=${page}">${(chapter-1)*10 +page } </a>
 		         <c:if test="${page ==10 }">
-		          <a href="${contextPath}/admin/member/adminMemberMain.do?command=${command}&beginDate=${beginDate}&endDate=${endDate}&search_type=${search_type}&search_word=${search_word}&chapter=${chapter+1}&pageNum=${chapter*10+1}">&nbsp; next</a>
+		          <a href="${contextPath}/admin/member/adminMemberMain.do?command=${command}&beginDate=${beginDate}&endDate=${endDate}&search_type=${search_type}&search_word=${search_word}&chapter=${chapter+1}&pageNum=1">&nbsp; next</a>
 		         </c:if> 
 	      </c:forEach> 
 	</DIV>	

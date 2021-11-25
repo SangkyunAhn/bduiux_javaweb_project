@@ -44,11 +44,29 @@ public class BoardControllerImpl implements BoardController{
 
 	@Override
 	@RequestMapping(value= "/board/listArticles.do", method = {RequestMethod.GET, RequestMethod.POST})
-	public ModelAndView listArticles(HttpServletRequest request, HttpServletResponse response) throws Exception {
+	public ModelAndView listArticles(@RequestParam Map<String, String> dataMap,
+									 HttpServletRequest request, HttpServletResponse response) throws Exception {
 		String viewName = (String)request.getAttribute("viewName");
-		List articlesList = boardService.listArticles();
 		ModelAndView mav = new ModelAndView(viewName);
+
+		String section = dataMap.get("section");
+		String pageNum = dataMap.get("pageNum");
+
+		HashMap<String, Object> condMap = new HashMap<String, Object>();
+		if(section== null) {
+			section = "1";
+		}
+		condMap.put("section",section);
+		if(pageNum== null) {
+			pageNum = "1";
+		}
+		condMap.put("pageNum",pageNum);
+		List articlesList = boardService.listArticlesPerPage(condMap);
+
 		mav.addObject("articlesList", articlesList);
+		mav.addObject("section", section);
+		mav.addObject("pageNum", pageNum);
+
 		return mav;
 
 	}

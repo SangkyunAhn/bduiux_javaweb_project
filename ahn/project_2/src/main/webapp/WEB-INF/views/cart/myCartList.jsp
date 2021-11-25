@@ -185,7 +185,7 @@ function fn_order_all_cart_goods(){
 <body>
 	<table class="list_view">
 		<tbody align=center >
-			<tr style="background:#33ff00" >
+			<tr style="background:#00ffff" >
 				<td class="fixed" >구분</td>
 				<td colspan=2 class="fixed">상품명</td>
 				<td>정가</td>

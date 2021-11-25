@@ -10,15 +10,15 @@
 
 <div id="ad_main_banner">
 	<ul class="bjqs">
-	  <li><img width="775" height="145" src="${contextPath}/resources/image/main_banner01.PNG"></li>
-		<li><img width="775" height="145" src="${contextPath}/resources/image/main_banner02.PNG"></li>
-		<li><img width="775" height="145" src="${contextPath}/resources/image/main_banner03.PNG"></li> 
+	  <li><img width="775" height="145" src="${contextPath}/resources/image/main_banner1.PNG"></li>
+		<li><img width="775" height="145" src="${contextPath}/resources/image/main_banner2.PNG"></li>
+		<li><img width="775" height="145" src="${contextPath}/resources/image/main_banner3.PNG"></li>
 	</ul>
 </div>
 <div class="main_book">
     <h3>공지사항
         <c:forEach var="i" begin="0" end="165">&nbsp;</c:forEach>
-        <a href="${contextPath}/board/listArticles.do">더보기</a>
+        <a style="font-size: 11px" href="${contextPath}/board/listArticles.do">더보기</a>
     </h3>
     <table width="945">
     	<c:forEach  var="article" items="${articlesList }" varStatus="articleNum" >
@@ -31,7 +31,6 @@
         </tr>
     	</c:forEach>
     </table>
-    <br>
    <c:set  var="goods_count" value="0" />
 	<h3>이젠볼링 추천상품</h3>
 	<c:forEach var="item" items="${goodsMap.bestseller }">
@@ -58,7 +57,7 @@
 </div>
 <div class="clear"></div>
 <div id="ad_sub_banner">
-	<img width="770" height="117" src="${contextPath}/resources/image/sub_banner01.PNG">
+	<img width="770" height="117" src="${contextPath}/resources/image/sub_banner1.jpg">
 </div>
 <div class="main_book" >
 <c:set  var="goods_count" value="0" />

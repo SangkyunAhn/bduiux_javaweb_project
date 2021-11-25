@@ -433,7 +433,7 @@ function fn_detail_search(){
 <DIV class="clear"></DIV>
 <TABLE class="list_view">
 		<TBODY align=center >
-			<tr style="background:#33ff00" >
+			<tr style="background:#00ffff" >
 				<td>상품번호</td>
 				<td>상품이름</td>
 				<td>상품회사</td>
@@ -488,7 +488,7 @@ function fn_detail_search(){
 		         </c:if>
 		          <a href="${contextPath}/admin/goods/adminGoodsMain.do?command=${command}&beginDate=${beginDate}&endDate=${endDate}&search_type=${search_type}&search_word=${search_word}&section=${section}&pageNum=${page}">${(section-1)*10 +page } </a>
 		         <c:if test="${page ==10 }">
-		          <a href="${contextPath}/admin/goods/adminGoodsMain.do?command=${command}&beginDate=${beginDate}&endDate=${endDate}&search_type=${search_type}&search_word=${search_word}&section=${section+1}&pageNum=${section*10+1}">&nbsp; next</a>
+		          <a href="${contextPath}/admin/goods/adminGoodsMain.do?command=${command}&beginDate=${beginDate}&endDate=${endDate}&search_type=${search_type}&search_word=${search_word}&section=${section+1}&pageNum=1">&nbsp; next</a>
 		         </c:if> 
 	      		</c:forEach> 
      

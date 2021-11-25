@@ -28,8 +28,9 @@
 	}
 </script>
 <body>
-<table align="center" border="1"  width="100%"  >
-  <tr height="10" align="center"  bgcolor="lightgreen">
+<h3>공지사항</h3>
+<table class="list_view" align="center" width="100%"  >
+  <tr height="10" align="center"  bgcolor="#00ffff">
      <td >글번호</td>
      <td >제목</td>
      <td >작성일</td>
@@ -47,31 +48,33 @@
   <c:when test="${articlesList !=null }" >
     <c:forEach  var="article" items="${articlesList }" varStatus="articleNum" >
      <tr align="center">
-	<td width="5%">${articleNum.count}</td>
+	<td width="5%"><strong>${articleNum.count + 10 * (pageNum - 1) + 100 * (section - 1)}</strong></td>
 	<td align='left'  width="35%">
 	  <span style="padding-right:30px"></span>
-	   <c:choose>
-	      <c:when test='${article.level > 1 }'>  
-	         <c:forEach begin="1" end="${article.level }" step="1">
-	              <span style="padding-left:20px"></span>    
-	         </c:forEach>
-	         <span style="font-size:12px;">[답변]</span>
-                   <a class='cls1' href="${contextPath}/board/viewArticle.do?articleNO=${article.articleNO}">${article.title}</a>
-	          </c:when>
-	          <c:otherwise>
-	            <a class='cls1' href="${contextPath}/board/viewArticle.do?articleNO=${article.articleNO}">${article.title }</a>
-	          </c:otherwise>
-	        </c:choose>
+	      <strong><a class='cls1' href="${contextPath}/board/viewArticle.do?articleNO=${article.articleNO}">${article.title }</a></strong>
 	  </td>
-	  <td  width="10%">${article.writeDate}</td> 
+	  <td  width="10%"><strong>${article.writeDate}</strong></td>
 	</tr>
     </c:forEach>
      </c:when>
     </c:choose>
+    <tr>
+        <td colspan=8 class="fixed" align="center">
+                         <c:forEach   var="page" begin="1" end="10" step="1" >
+                         <c:if test="${section >1 && page==1 }">
+                          <a href="${contextPath}/board/listArticles.do?section=${section-1}&pageNum=${(section-1)*10 +1 }">&nbsp; &nbsp;</a>
+                         </c:if>
+                          <a href="${contextPath}/board/listArticles.do?section=${section}&pageNum=${page}">${(section-1)*10 +page } </a>
+                         <c:if test="${page ==10 }">
+                          <a href="${contextPath}/board/listArticles.do?section=${section+1}&pageNum=1">&nbsp; next</a>
+                         </c:if>
+                        </c:forEach>
+        </td>
+    </tr>
 </table>
 <c:if test="${isLogOn==true and memberInfo.member_id =='admin'}">
-    <a  class="cls1"  href="javascript:fn_articleForm('${isLogOn}','${contextPath}/board/articleForm.do',
-                                                        '${contextPath}/member/loginForm.do')"><p class="cls2">글쓰기</p></a>
+    <input type="button" value="글쓰기" onClick="fn_articleForm('${isLogOn}','${contextPath}/board/articleForm.do',
+                                                                                                       '${contextPath}/member/loginForm.do')">
 </c:if>
 </body>
 </html>

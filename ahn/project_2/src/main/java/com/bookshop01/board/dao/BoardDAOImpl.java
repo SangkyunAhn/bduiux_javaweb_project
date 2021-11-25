@@ -1,6 +1,7 @@
 package com.bookshop01.board.dao;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
@@ -24,6 +25,11 @@ public class BoardDAOImpl implements BoardDAO {
 		return articlesList;
 	}
 
+	@Override
+	public List selectAllArticlesListPerPage(HashMap condMap) throws DataAccessException {
+		List<ArticleVO> articlesList = articlesList = sqlSession.selectList("mapper.board.selectAllArticlesListPerPage", condMap);
+		return articlesList;
+	}
 
 	@Override
 	public int insertNewArticle(Map articleMap) throws DataAccessException {
@@ -32,22 +38,6 @@ public class BoardDAOImpl implements BoardDAO {
 		sqlSession.insert("mapper.board.insertNewArticle",articleMap);
 		return articleNO;
 	}
-
-	//다중 파일 업로드
-	/*
-	@Override
-	public void insertNewImage(Map articleMap) throws DataAccessException {
-		List<ImageVO> imageFileList = (ArrayList)articleMap.get("imageFileList");
-		int articleNO = (Integer)articleMap.get("articleNO");
-		int imageFileNO = selectNewImageFileNO();
-		for(ImageVO imageVO : imageFileList){
-			imageVO.setImageFileNO(++imageFileNO);
-			imageVO.setArticleNO(articleNO);
-		}
-		sqlSession.insert("mapper.board.insertNewImage",imageFileList);
-	}
-
-   */
 
 	@Override
 	public ArticleVO selectArticle(int articleNO) throws DataAccessException {

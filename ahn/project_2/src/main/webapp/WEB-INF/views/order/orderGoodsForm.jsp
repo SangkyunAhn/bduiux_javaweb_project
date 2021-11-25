@@ -36,8 +36,8 @@
 	top: 0%;
 	width: 60%;
 	height: 100%;
-	background-color:#ccff99;
-	border: 2px solid  #0000ff;
+	background-color:#99ffe0;
+	border: 2px solid  #0f0f0f;
 }
 
 #close {
@@ -505,7 +505,7 @@ function fn_process_pay_order(){
 <form  name="form_order">	
 	<table class="list_view">
 		<tbody align=center>
-			<tr style="background: #33ff00">
+			<tr style="background: #00ffff">
 				<td colspan=2 class="fixed">주문상품명</td>
 				<td>수량</td>
 				<td>주문금액</td>

@@ -625,7 +625,7 @@ function fn_detail_search(){
 		         </c:if>
 		          <a href="${contextPath}/admin/order/adminOrderMain.do?command=${command}&beginDate=${beginDate}&endDate=${endDate}&search_type=${search_type}&search_word=${search_word}&section=${section}&pageNum=${page}">${(section-1)*10 +page } </a>
 		         <c:if test="${page ==10 }">
-		          <a href="${contextPath}/admin/order/adminOrderMain.do?command=${command}&beginDate=${beginDate}&endDate=${endDate}&search_type=${search_type}&search_word=${search_word}&section=${section+1}&pageNum=${section*10+1}">&nbsp; next</a>
+		          <a href="${contextPath}/admin/order/adminOrderMain.do?command=${command}&beginDate=${beginDate}&endDate=${endDate}&search_type=${search_type}&search_word=${search_word}&section=${section+1}&pageNum=1">&nbsp; next</a>
 		         </c:if> 
 	      		</c:forEach> 
            </td>

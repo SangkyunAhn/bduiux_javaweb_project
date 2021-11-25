@@ -90,24 +90,7 @@
   <form name="frmArticle" method="post"  action="${contextPath}"  enctype="multipart/form-data">
   <table  border=0  align="center">
   <tr>
-   <td width=150 align="center" bgcolor=#FF9933>
-      글번호
-   </td>
-   <td >
-    <input type="text"  value="${article.articleNO }"  disabled />
-    <input type="hidden" name="articleNO" value="${article.articleNO}"  />
-   </td>
-  </tr>
-  <tr>
-    <td width="150" align="center" bgcolor="#FF9933">
-      작성자 아이디
-   </td>
-   <td >
-    <input type=text value="${article.id }" name="writer"  disabled />
-   </td>
-  </tr>
-  <tr>
-    <td width="150" align="center" bgcolor="#FF9933">
+    <td width="150" align="center" bgcolor="#00FFFF">
       제목 
    </td>
    <td>
@@ -115,7 +98,7 @@
    </td>   
   </tr>
   <tr>
-    <td width="150" align="center" bgcolor="#FF9933">
+    <td width="150" align="center" bgcolor="#00FFFF">
       내용
    </td>
    <td>
@@ -126,7 +109,7 @@
  <c:if test="${not empty imageFileList && imageFileList!='null' }">
 	  <c:forEach var="item" items="${imageFileList}" varStatus="status" >
 		    <tr>
-			    <td width="150" align="center" bgcolor="#FF9933"  rowspan="2">
+			    <td width="150" align="center" bgcolor="#00FFFF"  rowspan="2">
 			      이미지${status.count }
 			   </td>
 			   <td>
@@ -146,7 +129,7 @@
   <c:choose> 
 	  <c:when test="${not empty article.imageFileName && article.imageFileName!='null' }">
 	   	<tr>
-		    <td width="150" align="center" bgcolor="#FF9933"  rowspan="2">
+		    <td width="150" align="center" bgcolor="#00FFFF"  rowspan="2">
 		      이미지
 		   </td>
 		   <td>
@@ -163,7 +146,7 @@
 		 </c:when>
 		 <c:otherwise>
 		    <tr  id="tr_file_upload" >
-				    <td width="150" align="center" bgcolor="#FF9933"  rowspan="2">
+				    <td width="150" align="center" bgcolor="#00FFFF"  rowspan="2">
 				      이미지
 				    </td>
 				    <td>
@@ -180,7 +163,7 @@
 		 </c:otherwise>
 	 </c:choose>
   <tr>
-	   <td width="150" align="center" bgcolor="#FF9933">
+	   <td width="150" align="center" bgcolor="#00FFFF">
 	      등록일자
 	   </td>
 	   <td>
