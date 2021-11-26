@@ -8,6 +8,10 @@
   request.setCharacterEncoding("UTF-8");
 %>
 
+<script>
+    alert('이 사이트는 2021년 11월 29일 수료한 이젠아카데미 안산캠퍼스 빅데이터반 2조(안상균, 김현섭, 윤동혁)의 작품으로, 실제로 사용되는 사이트가 아님을 알려드립니다.');
+</script>
+
 <div id="ad_main_banner">
 	<ul class="bjqs">
 	  <li><img width="775" height="145" src="${contextPath}/resources/image/main_banner1.PNG"></li>
@@ -17,7 +21,7 @@
 </div>
 <div class="main_book">
     <h3>공지사항
-        <c:forEach var="i" begin="0" end="165">&nbsp;</c:forEach>
+        <c:forEach var="i" begin="0" end="168">&nbsp;</c:forEach>
         <a style="font-size: 11px" href="${contextPath}/board/listArticles.do">더보기</a>
     </h3>
     <table width="945">

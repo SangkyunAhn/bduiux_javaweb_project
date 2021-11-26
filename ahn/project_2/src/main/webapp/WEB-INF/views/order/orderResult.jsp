@@ -8,7 +8,7 @@
 	<H1>1.최종 주문 내역서</H1>
 	<TABLE class="list_view">
 		<TBODY align=center>
-			<tr style="background: #33ff00">
+			<tr style="background: #00ffff">
 			     <td>주문번호 </td>
 				<td colspan=2 class="fixed">주문상품명</td>
 				<td>수량</td>
