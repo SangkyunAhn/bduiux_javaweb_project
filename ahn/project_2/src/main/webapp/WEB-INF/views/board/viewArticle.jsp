@@ -73,6 +73,7 @@
  </script>
 </head>
 <body>
+  <h3>공지사항</h3><br>
   <form name="frmArticle" method="post"  action="${contextPath}"  enctype="multipart/form-data">
   <table  border=0  align="center">
   <tr>

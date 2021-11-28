@@ -6,13 +6,12 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <c:set var="contextPath"  value="${pageContext.request.contextPath}"  />
 <ul>
-	<li><a href="#">회사소개</a></li>
-	<li><a href="#">이용약관</a></li>
-	<li><a href="#">개인정보취급방침</a></li>
+	<li><a href="${contextPath}/info/companyIntro.do">회사소개</a></li>
+	<li><a href="${contextPath}/info/termOfUse.do">이용약관</a></li>
+	<li><a href="${contextPath}/info/privacyStatement.do">개인정보취급방침</a></li>
 	<li><a href="#">제휴/볼링홍보</a></li>
 	<li><a href="#">광고센터</a></li>
 	<li><a href="#">고객만족센터</a></li>
-	<li class="no_line"><a href="#">찾아오시는길</a></li>
 </ul>
 <div class="clear"></div>
 <a href="#"><img width="147px"  height="62px" alt="Bowlinglogo" src="${contextPath}/resources/image/Logo2.png" /></a>
